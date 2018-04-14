@@ -6,17 +6,11 @@
     <title>Title</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- 新 Bootstrap4 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">-->
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
-    <!--<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>-->
-    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
-    <!--<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
-    <!--<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>-->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -41,8 +35,15 @@
                 <button id="gz" type="button" class="btn citybtn" onclick="citybtn(this)">二手</button>
             </div>
         </div>
-
-
+        <div class="form-group">
+            <label for="select_district">地区</label>
+            <select id ="select_district"  class=" form-control">
+                <option value ="丰台区">丰台区</option>
+                <option value ="海淀区">海淀区</option>
+                <option value="朝阳区">朝阳区</option>
+                <option value="东城区">东城区</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="low_RMB">最低价格</label>
             <input type="number" id="low_RMB" class="form-control" aria-describedby="helpBlock"
@@ -63,52 +64,546 @@
         <span id="post" class="help-block">以上信息不填，则搜索全部信息</span>
         <button class="btn btn-primary" type="button" onclick="search()">轻松查</button>
     </form>
-    <div id="alertinfo" class="alert alert-success" role="alert">
-        <strong>水木租房子: </strong>由水木社区网友自发开发;<br>无需注册直接发帖,逾期系统自动删帖;<br>去中介,无中介费。<a href="https://m.weibo.cn/u/3211938893">
-        点我前往</a>
-    </div>
-    <div class="alert alert-info" role="alert"><strong>租房+: </strong>提供搬家、保洁、维修和二手转让等租房周边需求发布。</div><!--<a href="#" onclick="shaixuanvis()">点我前往</a>-->
-	<img src="images/2.jpg" style="width:100%;height:240px;">
-</div>
-
-
-<button id="loadbtn" type="button" class="btn btn-primary btn-block " onclick="getnextdata()" style="display: none">
-    —·—加载更多—·—
-</button>
-
-
-<!-- 模态框 -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- 模态框头部 -->
-            <div class="modal-header">
-                <h6 class="modal-title"><a id="openif" href="" target="_blank">新窗口打开 >>></a></h6>
-
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- 模态框主体 -->
-            <div class="modal-body">
-                <div class="warpper">
-                    <iframe id="iframe" src="" height="500px" scrolling="yes" security="restricted" sandbox=""
-                            frameborder="0"></iframe>
-                </div>
-
-            </div>
-
-            <!-- 模态框底部 -->
-            <div class="modal-footer">
-                <h5>来源 豆瓣 douban.com</h5>
-            </div>
-
+    <div id ="rent_type" style="text-align: center;align-content:center;width: 100%;display: block">
+        <div id="rent" class="btn-group btn-group-sm">
+            <button id="cz" type="button" class="btn btn-primary citybtn" onclick="citybtn(this)">出租</button>
+            <button id="qz" type="button" class="btn citybtn" onclick="citybtn(this)">求租</button>
         </div>
     </div>
+
+    <div id="more">
+        <div style="display: none;">
+            <div class="single_item"><!--onclick="alert(this.innerHTML);"-->
+                <!--<a href="pages/rent_info.html" class="content-box">-->
+                <a class="content-box" href="pages/rent_info.php?house_rent_id=108&amp;from=index">
+                    <!--房间图片 float-->
+                    <!--
+                    <div class="pic-wrapper float-left">
+                        <img class="room-pic" alt="">
+                    </div>
+                    -->
+                    <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                    <!--
+                    <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                    </div>
+                    -->
+                    <div class="pic-wrapper-float"
+                         style="background-image: url(images/1.jpg);"></div>
+                    <!--房源标题 float-->
+                    <div class="content-wrapper float-left">
+                        <h4>
+                            <div class="title">主卧22-25平米，找男生合租。房子两室一厅，住两户</div>
+                        </h4>
+                        <!--房间属性简介 block 垂直排列-->
+                        <div class="abstract">
+                            <ul class="room-info">
+                                <li id="district" style="width:auto;">
+                                    <div class="district">海淀/单间/合租</div>
+                                </li>
+                                <li id="rent-type" style="float:right;">
+                                    <span class="passtime">2个月前</span>
+                                </li>
+                                <!--
+                                <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                                <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                                -->
+                            </ul>
+                        </div>
+                        <div class="state">
+                            <ul class="state-info">
+                                <!--房源状态描述-->
+                                <li>
+                                    <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                    <span id="watcher"><span class="house_rent_id">C108</span></span>
+                                </li>
+                                <li class="text-center">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                    <span id="want"><span class="want">2</span></span>
+                                </li>
+                                <li id="price" class="text-right">
+                                    <div class="price">1.5~2k</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <hr>
+            </div>
+        </div>
+        <div class="single_item" id="more_element_1"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=128&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(images/1.jpg);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">丰台/二室/转租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">2天前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">2~2.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_2"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=127&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/朝阳.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">房主直租，可长租。该房为婚房，面积五十平，六层南向，</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">朝阳/一室/整租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">5天前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C127</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">5~5.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_3"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=126&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">地质大学后门，地大附属中学，临近操场，体育馆，方便运</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">海淀/二室/合租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">6天前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C126</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">3~3.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_4"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=125&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">离永泰庄地铁站步行五分钟，小区外就有超市，各种饭馆特</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">海淀/床位/合租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">2星期前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C125</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">1~1.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_5"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=124&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/环京.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">房子位于燕郊火车站附近，两室一厅一厨一卫，有床，沙发</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">环京/二室/整租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">2星期前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C124</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">1.5~2k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_6"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=123&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">8号线霍营到育知路之间皆可，详情可加微信私聊</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">海淀/四室/整租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">2星期前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C123</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">7~7.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_7"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=122&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/朝阳.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">1.复试LOFT火爆招租，实墙，大窗户，通风好，阳光</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">朝阳/单间/转租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">1个月前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C122</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">0</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">2.5~3k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+        <div class="single_item" id="more_element_8"><!--onclick="alert(this.innerHTML);"-->
+            <!--<a href="pages/rent_info.html" class="content-box">-->
+            <a class="content-box" href="pages/rent_info.php?house_rent_id=121&amp;from=index">
+                <!--房间图片 float-->
+                <!--
+                <div class="pic-wrapper float-left">
+                    <img class="room-pic" alt="">
+                </div>
+                -->
+                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
+                <!--
+                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
+                </div>
+                -->
+                <div class="pic-wrapper-float"
+                     style="background-image: url(&quot;../images/cover_img/朝阳.jpg&quot;);"></div>
+                <!--房源标题 float-->
+                <div class="content-wrapper float-left">
+                    <h4>
+                        <div class="title">非中介！有网，可以洗澡，有窗户</div>
+                    </h4>
+                    <!--房间属性简介 block 垂直排列-->
+                    <div class="abstract">
+                        <ul class="room-info">
+                            <li id="district" style="width:auto;">
+                                <div class="district">朝阳/单间/整租</div>
+                            </li>
+                            <li id="rent-type" style="float:right;">
+                                <span class="passtime">1个月前</span>
+                            </li>
+                            <!--
+                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
+                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="state">
+                        <ul class="state-info">
+                            <!--房源状态描述-->
+                            <li>
+                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
+                                <span id="watcher"><span class="house_rent_id">C121</span></span>
+                            </li>
+                            <li class="text-center">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <span id="want"><span class="want">1</span></span>
+                            </li>
+                            <li id="price" class="text-right">
+                                <div class="price">1~1.5k</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <hr>
+        </div>
+
+        <a href="javascript:;" class="get_more"
+           style="color: rgb(0, 123, 196); text-decoration: none; outline: none; display: block;">::more::</a>
+        <div class="more_loader_spinner" style="display: none;"></div>
+    </div>
+
+
 </div>
 
-<!--<script src="http://me.52fhy.com/demo/loadmore/js/zepto.min.js"></script>-->
-<script src="js/my.js"></script>
+<div class="footer">
+    <div id="alertinfo" class="alert alert-success" role="alert">
+        <strong>水木租房子: </strong>由水木社区网友自发开发;<br>无需注册直接发帖,逾期系统自动删帖;<br>去中介,无中介费。<a
+            href="https://m.weibo.cn/u/3211938893">
+        点我前往</a>
+    </div>
+    <div class="alert alert-info" role="alert"><strong>租房+: </strong>提供搬家、保洁、维修和二手转让等租房周边需求发布。</div>
+    <!--<a href="#" onclick="shaixuanvis()">点我前往</a>-->
+    <img src="images/2.jpg" style="width:100%;height:240px;">
+    <button id="loadbtn" type="button" class="btn btn-primary btn-block " onclick="getnextdata()" style="display: none">
+        —·—加载更多—·—
+    </button>
+</div>
 
+
+
+
+<script src="js/my.js"></script>
 </body>
 </html>
