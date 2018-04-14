@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>水木租房子-smzfz.com</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!-- popper.min.js 用于弹窗、提示、下拉菜单 -->
+    <!--<script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>-->
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <!--<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>-->
+    <!--<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>-->
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+<nav class="navbar" role="navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand " href="#" onclick="shaixuanvis()">租房+</a>
+
+        <p class="navbar-brand" style="left: 35%;position: absolute">水木租房子</p>
+
+        <a class="navbar-brand " href="https://m.weibo.cn/u/3211938893">客服</a>
+    </div>
+</nav>
+
+<div id="body" data-pages='0' class="container-fluid">
+    <form id="shaixua" style="background-color: white;display: none">
+        <div style="text-align: center;align-content:center;width: 100%">
+            <div id="citys" data-city="hz" class="btn-group btn-group-sm">
+                <button id="hz" type="button" class="btn btn-primary citybtn" onclick="citybtn(this)">搬家</button>
+                <button id="bj" type="button" class="btn citybtn" onclick="citybtn(this)">保洁</button>
+                <button id="sh" type="button" class="btn citybtn" onclick="citybtn(this)">维修</button>
+                <button id="gz" type="button" class="btn citybtn" onclick="citybtn(this)">二手</button>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="low_RMB">最低价格</label>
+            <input type="number" id="low_RMB" class="form-control" aria-describedby="helpBlock"
+                   placeholder="最低价格  例如：100"
+                   value="100" onchange="saveSet()">
+        </div>
+        <div class="form-group">
+            <label for="top_RMB">最高价格</label>
+            <input type="number" id="top_RMB" class="form-control" aria-describedby="helpBlock"
+                   placeholder="最高价格 不填则无上限"
+                   value="1500" onchange="saveSet()">
+        </div>
+        <div class="form-group">
+            <label for="keywords">关键词</label>
+            <textarea type="text" id="keywords" class="form-control" aria-describedby="helpBlock"
+                      placeholder="例如：单间，独卫，男，地铁" onchange="saveSet()"></textarea>
+        </div>
+        <span id="post" class="help-block">以上信息不填，则搜索全部信息</span>
+        <button class="btn btn-primary" type="button" onclick="search()">轻松查</button>
+    </form>
+    <div id="alertinfo" class="alert alert-success" role="alert">
+        <strong>水木租房子: </strong>由水木社区网友自发开发;<br>无需注册直接发帖,逾期系统自动删帖;<br>去中介,无中介费。<a href="https://m.weibo.cn/u/3211938893">
+        点我前往</a>
+    </div>
+    <div class="alert alert-info" role="alert"><strong>租房+: </strong>提供搬家、保洁、维修和二手转让等租房周边需求发布。</div><!--<a href="#" onclick="shaixuanvis()">点我前往</a>-->
+	<img src="images/2.jpg" style="width:100%;height:240px;">
+</div>
+
+
+<button id="loadbtn" type="button" class="btn btn-primary btn-block " onclick="getnextdata()" style="display: none">
+    —·—加载更多—·—
+</button>
+
+
+<!-- 模态框 -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h6 class="modal-title"><a id="openif" href="" target="_blank">新窗口打开 >>></a></h6>
+
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body">
+                <div class="warpper">
+                    <iframe id="iframe" src="" height="500px" scrolling="yes" security="restricted" sandbox=""
+                            frameborder="0"></iframe>
+                </div>
+
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <h5>来源 豆瓣 douban.com</h5>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--<script src="http://me.52fhy.com/demo/loadmore/js/zepto.min.js"></script>-->
+<script src="js/my.js"></script>
+
+</body>
+</html>
