@@ -3,7 +3,7 @@
 function shaixuanvis() {
 
     $('#shaixua').toggle(300);
-
+    $('#rent_type').toggle(300);
 }
 
 function citybtn(view) {
