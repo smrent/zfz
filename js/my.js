@@ -6,66 +6,74 @@ function shaixuanvis() {
     $('#rent_type').toggle(300);
 }
 
-function citybtn(view) {
+function typebtn(view) {
 
-    $('.btn-primary.citybtn').toggleClass('btn-primary');
+    $('.btn-primary.typebtn').toggleClass('btn-primary');
 
     $(view).toggleClass('btn-primary');
 
-    $($(view).parent()).attr('data-city', $(view).attr('id'));
+    $($(view).parent()).attr('data-chooseType', $(view).attr('id'));
 
-    $.cookie('citybtn', $(view).attr('id'));
+}
+
+function rentbtn(view) {
+
+    $('.btn-primary.rentbtn').toggleClass('btn-primary');
+
+    $(view).toggleClass('btn-primary');
+
+    $($(view).parent()).attr('data-chooseRent', $(view).attr('id'));
 
 }
 
 //卡片视图增加引擎
-function addCard(info_arr) {
-
-
-    info_arr.forEach(function (item, i, array) {
-
-
-        var title = item['title'],
-            jiage = item['min_rmb'] + '~' + item['max_rmb'],
-            link = item['link'],
-            time = item['wordtime'];
-
-        var imgs, li;
-
-        var idnum = RndNum(6);
-
-
-        var card = "<div id='card" + idnum + "' class=\"card img-fluid\" style=\"width:100%;background-color: #ffffff;margin-top: 5px;margin-bottom: 5px;opacity: 0.5;\">\n" +
-            "\n"
-            +
-            "        <div class=\"card-img-overlay\"\n" +
-            "             style=\"height: 105px;position: relative;bottom:0;padding-bottom:0;line-height: 0;background-color: rgba(255,255,255,0.63)\">\n" +
-            "            <!--            <h4 class=\"card-title\">John Doe</h4>-->\n" +
-            "            <p class=\"card-text\" style=\"line-height: 1;\"><a class=\"card-text\" data-toggle=\"modal\" data-target=\"#myModal\" onclick='topview(this)' style='color: black' href='" + link + "'>" + title + "</a></p>\n" +
-            "            <div class=\"row\">\n" +
-            "                <h5 class=\"col-6\" style=\"width: 4em;color: #e64a19;\">￥" + jiage + "</h5>\n" +
-            "                <h6 class=\"col-6\" style=\"width: 4em;\">" + time.substr(0, 10) + "</h6>\n" +
-            "            </div>\n" +
-            "\n" +
-            "\n" +
-            "        </div>\n" +
-            "    </div>";
-
-
-        $('#body').append(card);
-
-        setTimeout(function () {
-            $("#card" + idnum + "").animate({
-
-                opacity: '1'
-
-            }, "slow");
-        }, i * 300);
-
-
-    });
-
-}
+// function addCard(info_arr) {
+//
+//
+//     info_arr.forEach(function (item, i, array) {
+//
+//
+//         var title = item['title'],
+//             jiage = item['min_rmb'] + '~' + item['max_rmb'],
+//             link = item['link'],
+//             time = item['wordtime'];
+//
+//         var imgs, li;
+//
+//         var idnum = RndNum(6);
+//
+//
+//         var card = "<div id='card" + idnum + "' class=\"card img-fluid\" style=\"width:100%;background-color: #ffffff;margin-top: 5px;margin-bottom: 5px;opacity: 0.5;\">\n" +
+//             "\n"
+//             +
+//             "        <div class=\"card-img-overlay\"\n" +
+//             "             style=\"height: 105px;position: relative;bottom:0;padding-bottom:0;line-height: 0;background-color: rgba(255,255,255,0.63)\">\n" +
+//             "            <!--            <h4 class=\"card-title\">John Doe</h4>-->\n" +
+//             "            <p class=\"card-text\" style=\"line-height: 1;\"><a class=\"card-text\" data-toggle=\"modal\" data-target=\"#myModal\" onclick='topview(this)' style='color: black' href='" + link + "'>" + title + "</a></p>\n" +
+//             "            <div class=\"row\">\n" +
+//             "                <h5 class=\"col-6\" style=\"width: 4em;color: #e64a19;\">￥" + jiage + "</h5>\n" +
+//             "                <h6 class=\"col-6\" style=\"width: 4em;\">" + time.substr(0, 10) + "</h6>\n" +
+//             "            </div>\n" +
+//             "\n" +
+//             "\n" +
+//             "        </div>\n" +
+//             "    </div>";
+//
+//
+//         $('#body').append(card);
+//
+//         setTimeout(function () {
+//             $("#card" + idnum + "").animate({
+//
+//                 opacity: '1'
+//
+//             }, "slow");
+//         }, i * 300);
+//
+//
+//     });
+//
+// }
 
 function search() {
 
@@ -210,34 +218,34 @@ function topview(view) {
 
 //-----------------结束--------------------
 
-function saveSet() {
-    $.cookie('low_RMB', $('#low_RMB').val());
-    $.cookie('top_RMB', $('#top_RMB').val());
-    $.cookie('keywords', $('#keywords').val());
-}
+// function saveSet() {
+//     $.cookie('low_RMB', $('#low_RMB').val());
+//     $.cookie('top_RMB', $('#top_RMB').val());
+//     $.cookie('keywords', $('#keywords').val());
+// }
 
-loadSet();
-
-function loadSet() {
-    $('#low_RMB').val($.cookie('low_RMB'));
-    $('#top_RMB').val($.cookie('top_RMB'));
-    $('#keywords').val($.cookie('keywords'));
-    switch ($.cookie('citybtn')) {
-        case 'hz':
-            $('#hz').click();
-            break;
-        case 'bj':
-            $('#bj').click();
-            break;
-        case 'sh':
-            $('#sh').click();
-            break;
-        case 'gz':
-            $('#gz').click();
-            break;
-
-        default:
-            $('#hz').click();
-
-    }
-}
+// loadSet();
+//
+// function loadSet() {
+//     $('#low_RMB').val($.cookie('low_RMB'));
+//     $('#top_RMB').val($.cookie('top_RMB'));
+//     $('#keywords').val($.cookie('keywords'));
+//     switch ($.cookie('citybtn')) {
+//         case 'hz':
+//             $('#hz').click();
+//             break;
+//         case 'bj':
+//             $('#bj').click();
+//             break;
+//         case 'sh':
+//             $('#sh').click();
+//             break;
+//         case 'gz':
+//             $('#gz').click();
+//             break;
+//
+//         default:
+//             $('#hz').click();
+//
+//     }
+// }
