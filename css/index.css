@@ -214,3 +214,26 @@ button, input, optgroup, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
+.room-desc-abs {
+    width: 68%;
+    padding: 0 1% 1% 1%;
+    display: inline-block;
+}
+.room-desc-abs p {
+    font-size: 0.8em;
+    margin-bottom: 21px;
+}
+.room-info, .state {
+    color: #7a7777;
+    overflow: hidden;
+}
+ul li {
+    display: inline-block;
+}
+/*.bottom-abstract {*/
+    /*width: 68%;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*bottom: 20px;*/
+    /*text-align: center;*/
+/*}*/
