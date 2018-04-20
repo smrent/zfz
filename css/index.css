@@ -237,3 +237,16 @@ ul li {
     /*bottom: 20px;*/
     /*text-align: center;*/
 /*}*/
+
+.logo{
+    width: auto;
+    height: 40px;
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.btn-group i{
+    margin: 0 15px;
+}
