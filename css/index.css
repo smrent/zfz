@@ -248,5 +248,11 @@ ul li {
     white-space: nowrap;
 }
 .btn-group i{
-    margin: 0 15px;
+    margin: 0 5px;
+    padding: 0 10px;
+    line-height: 1.5;
+}
+
+.color-gray{
+    color:#999999;
 }
