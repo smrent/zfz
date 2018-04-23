@@ -17,7 +17,7 @@
 <body>
 <nav class="navbar" role="navigation">
     <div class="container-fluid">
-        <a class="navbar-brand " href="#" onclick="shaixuanvis()">租房+</a>
+        <a id="rent_plus" class="navbar-brand " href="#" onclick="shaixuanvis()">租房+</a>
 
         <img  class= "logo" src="images/logo.jpg" alt="logo">
         <!--<p class="navbar-brand" style="left: 35%;position: absolute">水木租房子</p>-->
@@ -31,7 +31,7 @@
         <div style="text-align: center;align-content:center;width: 100%">
 
             <div id="citys" data-chooseType="hz" class="btn-group btn-group-sm">
-                <a href=""><i class="fa fa-car fa-2x" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
                 <button id="hz" type="button" class="btn btn-primary typebtn" onclick="typebtn(this)">搬家</button>
                 <button id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</button>
                 <button id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</button>
@@ -74,14 +74,12 @@
 		-->
     </form>
     <div id="rent_type" style="text-align: center;align-content:center;width: 100%;display: block">
-
         <div id="rent" class="btn-group btn-group-sm" data-chooseRent="cz">
             <a href=""><i class="fa fa-search fa-2x" aria-hidden="true"></i></a>
-            <button id="cz" type="button" class="btn btn-primary rentbtn" onclick="rentbtn(this)">出租</button>
-            <button id="qz" type="button" class="btn rentbtn" onclick="rentbtn(this)">求租</button>
+            <a id="cz" type="button" class="btn btn-primary rentbtn" onclick="rentbtn(this)">出租</a>
+            <a id="qz" type="button" class="btn rentbtn" onclick="rentbtn(this)">求租</a>
             <a href=""><i class="icon-plus fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>
         </div>
-
     </div>
 
     <div id="more-rent">

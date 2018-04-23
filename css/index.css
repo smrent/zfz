@@ -77,6 +77,7 @@ html {
     display: -ms-inline-flexbox;
     display: inline-flex;
     vertical-align: middle;
+    height: 35px;
 }
 .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
@@ -96,11 +97,17 @@ html {
     font-size: .875rem;
     line-height: 1.5;
     border-radius: .2rem;
+    
 }
 [type=reset], [type=submit], button, html [type=button] {
-    -webkit-appearance: button;
+    /*-webkit-appearance: button;*/
+    background-color: #ddd;
 }
-.btn-primary {
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn.btn-primary {
     color: #fff;
     background-color: #007bff;
     border-color: #007bff;
@@ -121,7 +128,9 @@ html {
     line-height: 1.25;
     border-radius: .25rem;
     transition: all .15s ease-in-out;
+    color: #000;
 }
+
 button, select {
     text-transform: none;
 }
@@ -249,10 +258,15 @@ ul li {
 }
 .btn-group i{
     margin: 0 5px;
-    padding: 0 10px;
     line-height: 1.5;
+    font-size: 20px;
+    padding:2px 8px;
 }
 
 .color-gray{
     color:#999999;
+}
+/**/
+.tab-active{
+    color:#000000;
 }
