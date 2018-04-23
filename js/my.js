@@ -4,7 +4,7 @@ function shaixuanvis() {
 
     $('#shaixua').toggle(300);
     $('#rent_type').toggle(300);
-    $('#rent_plus').toggleClass('tab-active');
+    $('#rent_plus').toggleClass('tab active');
 }
 
 function typebtn(view) {

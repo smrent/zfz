@@ -267,6 +267,6 @@ ul li {
     color:#999999;
 }
 /**/
-.tab-active{
+.tab.active{
     color:#000000;
 }
