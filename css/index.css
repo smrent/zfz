@@ -270,3 +270,41 @@ ul li {
 .tab.active{
     color:#000000;
 }
+.foot-nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: whitesmoke;
+
+}
+.nav-item-active{
+    color: #16ce16;
+}
+.nav-item{
+    width: 19%;
+    /*height: 2em;*/
+    /*line-height: 3em;*/
+    text-align: center;
+    padding: 10px 0 0 0 ;
+
+}
+.nav-item>i,.nav-item>span{
+    width: 100%;
+    display: block;
+
+}
+.nav-item>i{
+    font-size: 1.2em;
+
+}
+.nav-item>span{
+    width: 100%;
+    display: block;
+    font-size: 0.8em;
+}
+body{
+    margin-bottom: 3em;
+}
+.single_item{
+    line-height: 1;
+}
