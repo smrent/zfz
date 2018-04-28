@@ -237,10 +237,7 @@ a.active {
 }
 
 /*border: 1px solid #999;*/
-.get_more {
-    margin: 10px;
-    text-align: center
-}
+
 
 .more_loader_spinner {
     width: 20px;
