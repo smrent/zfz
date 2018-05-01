@@ -27,59 +27,6 @@
 </nav>
 
 <div id="body" data-pages='0' class="container-fluid">
-    <!--<form id="shaixua" style="background-color: white;display: none">-->
-    <!--<div style="text-align: center;align-content:center;width: 100%">-->
-
-    <!--<div id="citys" data-chooseType="hz" class="btn-group btn-group-sm">-->
-    <!--<a href=""><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>-->
-    <!--<button id="hz" type="button" class="btn btn-primary typebtn" onclick="typebtn(this)">搬家</button>-->
-    <!--<button id="bj" type="button" class="btn typebtn" onclick="typebtn(this)">保洁</button>-->
-    <!--<button id="sh" type="button" class="btn typebtn" onclick="typebtn(this)">维修</button>-->
-    <!--<button id="gz" type="button" class="btn typebtn" onclick="typebtn(this)">数据</button>-->
-    <!--<a href=""><i class="color-gray fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>-->
-    <!--</div>-->
-
-    <!--</div>-->
-    <!--
-    <div class="form-group">
-        <label for="select_district">地区</label>
-        <select id="select_district" class=" form-control">
-            <option value="丰台区">丰台区</option>
-            <option value="海淀区">海淀区</option>
-            <option value="朝阳区">朝阳区</option>
-            <option value="东城区">东城区</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="low_RMB">最低价格</label>
-        <input type="number" id="low_RMB" class="form-control" aria-describedby="helpBlock"
-               placeholder="最低价格  例如：100"
-               value="100" onchange="saveSet()">
-    </div>
-    <div class="form-group">
-        <label for="top_RMB">最高价格</label>
-        <input type="number" id="top_RMB" class="form-control" aria-describedby="helpBlock"
-               placeholder="最高价格 不填则无上限"
-               value="1500" onchange="saveSet()">
-    </div>
-    <div class="form-group">
-        <label for="keywords">关键词</label>
-        <textarea type="text" id="keywords" class="form-control" aria-describedby="helpBlock"
-                  placeholder="例如：单间，独卫，男，地铁" onchange="saveSet()"></textarea>
-    </div>
-    <span id="post" class="help-block">选择地区，搜索对应区县需求</span>
-    <button class="btn btn-primary" type="button" onclick="search()">搜索</button>
-    -->
-    <!--</form>-->
-    <!--<div id="rent_type" style="text-align: center;align-content:center;width: 100%;display: block">-->
-    <!--<div id="rent" class="btn-group btn-group-sm" data-chooseRent="cz">-->
-    <!--<a href=""><i class="fa fa-search fa-2x" aria-hidden="true"></i></a>-->
-    <!--<a id="cz" type="button" class="btn btn-primary rentbtn" onclick="rentbtn(this)">出租</a>-->
-    <!--<a id="qz" type="button" class="btn rentbtn" onclick="rentbtn(this)">求租</a>-->
-    <!--<a href=""><i class="icon-plus fa fa-plus-circle fa-2x" aria-hidden="true"></i></a>-->
-    <!--</div>-->
-    <!--</div>-->
-
     <div id="more-rent">
         <div style="display: none;">
             <div class="single_item"><!--onclick="alert(this.innerHTML);"-->
@@ -106,16 +53,9 @@
                         <!--房间属性简介 block 垂直排列-->
                         <div class="abstract">
                             <ul class="room-info">
-                                <li id="district" style="width:auto;">
+                                <li>
                                     <div class="district">海淀/单间/合租</div>
                                 </li>
-								<!--
-                                <li id="rent-type" style="float:right;">
-                                    <span class="passtime">2个月前</span>
-                                </li>
-                                <li id="house-type" class="text-center"><div class="room_type"></div></li>
-                                <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
-                                -->
                             </ul>
                         </div>
                         <div class="state">
@@ -123,14 +63,14 @@
                                 <!--房源状态描述-->
                                 <li>
                                     <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                    <span id="watcher"><span class="house_rent_id">C108</span></span>
+                                    <span><span class="house_rent_id">C108</span></span>
                                 </li>
-                                <li id="price" class="text-center">
+                                <li  class="text-center">
 									<!--
                                     <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
                                     <span id="want"><span class="want">2</span></span>
 									-->
-									<div class="price">1.5~2k</div>
+									<div class="color-red">1.5~2k</div>
                                 </li>
                                 <li class="text-right">
                                     <span class="passtime">2个月前</span>
@@ -166,8 +106,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-								<div class="district">海淀/单间/合租</div>
+                            <li class="color-blue" style="width:auto;">
+								<div class="color-blue">海淀/单间/合租</div>
 							</li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -180,14 +120,14 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-							<li id="price" class="text-center">
+							<li  class="text-center">
 								<!--
 								<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 								<span id="want"><span class="want">2</span></span>
 								-->
-								<div class="price">1.5~2k</div>
+								<div class="color-red">1.5~2k</div>
 							</li>
 							<li class="text-right">
 								<span class="passtime">2个月前</span>
@@ -222,11 +162,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
+                            <li class="color-blue" style="width:auto;">
+                                <div class="color-blue">海淀/单间/合租</div>
                             </li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -239,14 +176,17 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-                            <li class="text-center">
+                            <li  class="text-center">
+                                <!--
                                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
+                                <span id="want"><span class="want">2</span></span>
+                                -->
+                                <div class="color-red">1.5~2k</div>
                             </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
+                            <li class="text-right">
+                                <span class="passtime">2个月前</span>
                             </li>
                         </ul>
                     </div>
@@ -278,11 +218,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
+                            <li class="color-blue" style="width:auto;">
+                                <div class="color-blue">海淀/单间/合租</div>
                             </li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -295,14 +232,17 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-                            <li class="text-center">
+                            <li  class="text-center">
+                                <!--
                                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
+                                <span id="want"><span class="want">2</span></span>
+                                -->
+                                <div class="color-red">1.5~2k</div>
                             </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
+                            <li class="text-right">
+                                <span class="passtime">2个月前</span>
                             </li>
                         </ul>
                     </div>
@@ -334,11 +274,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
+                            <li class="color-blue" style="width:auto;">
+                                <div class="color-blue">海淀/单间/合租</div>
                             </li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -351,14 +288,17 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-                            <li class="text-center">
+                            <li  class="text-center">
+                                <!--
                                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
+                                <span id="want"><span class="want">2</span></span>
+                                -->
+                                <div class="color-red">1.5~2k</div>
                             </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
+                            <li class="text-right">
+                                <span class="passtime">2个月前</span>
                             </li>
                         </ul>
                     </div>
@@ -390,11 +330,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
+                            <li class="color-blue" style="width:auto;">
+                                <div class="color-blue">海淀/单间/合租</div>
                             </li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -407,14 +344,17 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-                            <li class="text-center">
+                            <li  class="text-center">
+                                <!--
                                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
+                                <span id="want"><span class="want">2</span></span>
+                                -->
+                                <div class="color-red">1.5~2k</div>
                             </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
+                            <li class="text-right">
+                                <span class="passtime">2个月前</span>
                             </li>
                         </ul>
                     </div>
@@ -446,11 +386,8 @@
                     <!--房间属性简介 block 垂直排列-->
                     <div class="abstract">
                         <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
+                            <li class="color-blue" style="width:auto;">
+                                <div class="color-blue">海淀/单间/合租</div>
                             </li>
                             <!--
                             <li id="house-type" class="text-center"><div class="room_type"></div></li>
@@ -463,70 +400,17 @@
                             <!--房源状态描述-->
                             <li>
                                 <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
+                                <span><span class="house_rent_id">C128</span></span>
                             </li>
-                            <li class="text-center">
+                            <li  class="text-center">
+                                <!--
                                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
+                                <span id="want"><span class="want">2</span></span>
+                                -->
+                                <div class="color-red">1.5~2k</div>
                             </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </a>
-            <hr>
-        </div>
-        <div class="single_item" id="more_element_7"><!--onclick="alert(this.innerHTML);"-->
-            <!--<a href="pages/rent_info.html" class="content-box">-->
-            <a class="content-box" href="pages/rent_info.php?house_rent_id=128&amp;from=index">
-                <!--房间图片 float-->
-                <!--
-                <div class="pic-wrapper float-left">
-                    <img class="room-pic" alt="">
-                </div>
-                -->
-                <!--图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片-->
-                <!--
-                <div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">
-                </div>
-                -->
-                <div class="pic-wrapper-float"
-                     style="background-image: url(images/1.jpg);"></div>
-                <!--房源标题 float-->
-                <div class="content-wrapper float-left">
-                    <h4>
-                        <div class="title">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，</div>
-                    </h4>
-                    <!--房间属性简介 block 垂直排列-->
-                    <div class="abstract">
-                        <ul class="room-info">
-                            <li id="district" style="width:auto;">
-                                <div class="district">丰台/二室/转租</div>
-                            </li>
-                            <li id="rent-type" style="float:right;">
-                                <span class="passtime">2天前</span>
-                            </li>
-                            <!--
-                            <li id="house-type" class="text-center"><div class="room_type"></div></li>
-                            <li id="rent-type" class="text-right"><div class="rent_type"></div></li>
-                            -->
-                        </ul>
-                    </div>
-                    <div class="state">
-                        <ul class="state-info">
-                            <!--房源状态描述-->
-                            <li>
-                                <!--<i class="fa fa-eye" aria-hidden="true"></i>-->
-                                <span id="watcher"><span class="house_rent_id">C128</span></span>
-                            </li>
-                            <li class="text-center">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                                <span id="want"><span class="want">0</span></span>
-                            </li>
-                            <li id="price" class="text-right">
-                                <div class="price">2~2.5k</div>
+                            <li class="text-right">
+                                <span class="passtime">2个月前</span>
                             </li>
                         </ul>
                     </div>
@@ -537,345 +421,6 @@
         <a href="javascript:;" class="get_more" style="color:white;">——·——加载更多——·——</a>
         <div class="more_loader_spinner" style="display: none;"></div>
     </div>
-    <!--不同的加载样式使用不同的id=more-->
-    <!--<div id="more-other">-->
-    <!--<div style="display: none;">-->
-    <!--<div class="single_item">&lt;!&ndash;onclick="alert(this.innerHTML);"&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="pages/rent_info.html" class="content-box">&ndash;&gt;-->
-    <!--<a class="content-box" href="pages/rent_info.php?house_rent_id=108&amp;from=index">-->
-    <!--&lt;!&ndash;房间图片 float&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left">-->
-    <!--<img class="room-pic" alt="">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--&lt;!&ndash;图片不再放到img标签里了，直接作为div的背景图片，只需要修改这个div的属性background-image的url就可以应用图片&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left" style="padding-bottom: 30%;background-size: 100% 100%;background-image: url(../images/cover_img/东城.jpg);">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--<div class="pic-wrapper-float"-->
-    <!--style="background-image: url(images/1.jpg);"></div>-->
-    <!--&lt;!&ndash;房源标题 float&ndash;&gt;-->
-    <!--<div class="content-wrapper float-left">-->
-    <!--<h4>-->
-    <!--<div class="title">主卧22-25平米，找男生合租。房子两室一厅，住两户</div>-->
-    <!--</h4>-->
-    <!--&lt;!&ndash;房间属性简介 block 垂直排列&ndash;&gt;-->
-    <!--<div class="abstract">-->
-    <!--<ul class="room-info">-->
-    <!--<li id="district" style="width:auto;">-->
-    <!--<div class="district">海淀/单间/合租</div>-->
-    <!--</li>-->
-    <!--<li id="rent-type" style="float:right;">-->
-    <!--<span class="passtime">2个月前</span>-->
-    <!--</li>-->
-    <!--&lt;!&ndash;-->
-    <!--<li id="house-type" class="text-center"><div class="room_type"></div></li>-->
-    <!--<li id="rent-type" class="text-right"><div class="rent_type"></div></li>-->
-    <!--&ndash;&gt;-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--<div class="state">-->
-    <!--<ul class="state-info">-->
-    <!--&lt;!&ndash;房源状态描述&ndash;&gt;-->
-    <!--<li>-->
-    <!--&lt;!&ndash;<i class="fa fa-eye" aria-hidden="true"></i>&ndash;&gt;-->
-    <!--<span id="watcher"><span class="house_rent_id">C108</span></span>-->
-    <!--</li>-->
-    <!--<li class="text-center">-->
-    <!--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>-->
-    <!--<span id="want"><span class="want">2</span></span>-->
-    <!--</li>-->
-    <!--<li id="price" class="text-right">-->
-    <!--<div class="price">1.5~2k</div>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</a>-->
-    <!--<hr>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="single_item" id="more_element_1">&lt;!&ndash;onclick="alert(this.innerHTML);"&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="pages/rent_info.html" class="content-box">&ndash;&gt;-->
-    <!--<input type="hidden" value="房" name="keyword_post"> <input type="hidden" value="" name="rent_type_post">-->
-    <!--<input type="hidden" value="" name="district_post"> <input type="hidden" value="" name="subway_post"> <input-->
-    <!--type="hidden" value="" name="room_type_post"> <input type="hidden" value="" name="price_post">-->
-    <!--<input type="hidden" value="" name="num_id"> <input type="hidden" value="0" name="num_contact"> <input-->
-    <!--type="hidden" value="87" name="num_content"> <input type="hidden" value="0" name="num_conditions">-->
-    <!--<input type="hidden" value="5" name="count"> <input type="hidden" value="district" name="a0"> <input-->
-    <!--type="hidden" value="" name="b0"> <input type="hidden" value="room_type" name="a1"> <input-->
-    <!--type="hidden" value="" name="b1"> <input type="hidden" value="rent_type" name="a2"> <input-->
-    <!--type="hidden" value="" name="b2"> <input type="hidden" value="price" name="a3"> <input type="hidden"-->
-    <!--value=""-->
-    <!--name="b3">-->
-    <!--<input type="hidden" value="subway" name="a4"> <input type="hidden" value="" name="b4">-->
-
-    <!--<a class="content-box positon-relative"-->
-    <!--href="rent_info.php?house_rent_id=128&amp;from=rentout_search&amp;keyword_get=房&amp;rent_type_get=null&amp;district_get=null&amp;subway_get=null&amp;room_type_get=null&amp;price_get=null">-->
-    <!--&lt;!&ndash;<a class="content-box">&ndash;&gt;-->
-    <!--&lt;!&ndash;房间属性简介_水平排列&ndash;&gt;-->
-
-    <!--<div class="abstract">-->
-    <!--<ul class="room-info">-->
-    <!--<li id="district">-->
-    <!--<span class="district">丰台&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
-    <!--</li>-->
-    <!--<li id="rent-type" class="text-right">-->
-    <!--<span class="subway">5号线</span>-->
-    <!--</li>-->
-    <!--<li class="passtime">5天前</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了&ndash;&gt;-->
-    <!--&lt;!&ndash;房间图片 float&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left">-->
-    <!--<img class="room-pic" alt="">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--<div class="pic-wrapper-float"-->
-    <!--style="background-image: url(images/1.jpg);"></div>-->
-    <!--&lt;!&ndash;房源描述 float&ndash;&gt;-->
-    <!--<div class="room-desc-abs">-->
-    <!--<h5><span class="title" style="display: none;"></span></h5>-->
-    <!--<p class="content">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，朝九晚五，次卧女生因工作原因，现转租次卧，整屋朝南，阳光很好，8平多，离地铁站八分钟步行，<font-->
-    <!--color="red">房</font>租2200，押金为一个月<font color="red">房</font>租，期望你是女…</p>-->
-    <!--</div>-->
-    <!--<div class="bottom-abstract">-->
-    <!--<ul class="room-info">-->
-    <!--&lt;!&ndash;房源状态描述&ndash;&gt;-->
-    <!--<li>-->
-    <!--<span class="house_rent_id">C128</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>-->
-    <!--<span class="want">0</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--&lt;!&ndash;<span class="set_top"></span>&ndash;&gt;-->
-    <!--<span class="price" style="color:red">2~2.5k</span>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-    <!--</a>-->
-    <!--<hr>-->
-    <!--</div>-->
-    <!--<div class="single_item" id="more_element_2">&lt;!&ndash;onclick="alert(this.innerHTML);"&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="pages/rent_info.html" class="content-box">&ndash;&gt;-->
-    <!--<input type="hidden" value="房" name="keyword_post"> <input type="hidden" value="" name="rent_type_post">-->
-    <!--<input type="hidden" value="" name="district_post"> <input type="hidden" value="" name="subway_post"> <input-->
-    <!--type="hidden" value="" name="room_type_post"> <input type="hidden" value="" name="price_post">-->
-    <!--<input type="hidden" value="" name="num_id"> <input type="hidden" value="0" name="num_contact"> <input-->
-    <!--type="hidden" value="87" name="num_content"> <input type="hidden" value="0" name="num_conditions">-->
-    <!--<input type="hidden" value="5" name="count"> <input type="hidden" value="district" name="a0"> <input-->
-    <!--type="hidden" value="" name="b0"> <input type="hidden" value="room_type" name="a1"> <input-->
-    <!--type="hidden" value="" name="b1"> <input type="hidden" value="rent_type" name="a2"> <input-->
-    <!--type="hidden" value="" name="b2"> <input type="hidden" value="price" name="a3"> <input type="hidden"-->
-    <!--value=""-->
-    <!--name="b3">-->
-    <!--<input type="hidden" value="subway" name="a4"> <input type="hidden" value="" name="b4">-->
-
-    <!--<a class="content-box positon-relative"-->
-    <!--href="rent_info.php?house_rent_id=128&amp;from=rentout_search&amp;keyword_get=房&amp;rent_type_get=null&amp;district_get=null&amp;subway_get=null&amp;room_type_get=null&amp;price_get=null">-->
-    <!--&lt;!&ndash;<a class="content-box">&ndash;&gt;-->
-    <!--&lt;!&ndash;房间属性简介_水平排列&ndash;&gt;-->
-
-    <!--<div class="abstract">-->
-    <!--<ul class="room-info">-->
-    <!--<li id="district">-->
-    <!--<span class="district">丰台&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
-    <!--</li>-->
-    <!--<li id="rent-type" class="text-right">-->
-    <!--<span class="subway">5号线</span>-->
-    <!--</li>-->
-    <!--<li class="passtime">5天前</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了&ndash;&gt;-->
-    <!--&lt;!&ndash;房间图片 float&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left">-->
-    <!--<img class="room-pic" alt="">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--<div class="pic-wrapper-float"-->
-    <!--style="background-image: url(images/1.jpg);"></div>-->
-    <!--&lt;!&ndash;房源描述 float&ndash;&gt;-->
-    <!--<div class="room-desc-abs">-->
-    <!--<h5><span class="title" style="display: none;"></span></h5>-->
-    <!--<p class="content">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，朝九晚五，次卧女生因工作原因，现转租次卧，整屋朝南，阳光很好，8平多，离地铁站八分钟步行，<font-->
-    <!--color="red">房</font>租2200，押金为一个月<font color="red">房</font>租，期望你是女…</p>-->
-    <!--</div>-->
-    <!--<div class="bottom-abstract">-->
-    <!--<ul class="room-info">-->
-    <!--&lt;!&ndash;房源状态描述&ndash;&gt;-->
-    <!--<li>-->
-    <!--<span class="house_rent_id">C128</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>-->
-    <!--<span class="want">0</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--&lt;!&ndash;<span class="set_top"></span>&ndash;&gt;-->
-    <!--<span class="price" style="color:red">2~2.5k</span>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-    <!--</a>-->
-    <!--<hr>-->
-    <!--</div>-->
-    <!--<div class="single_item" id="more_element_3">&lt;!&ndash;onclick="alert(this.innerHTML);"&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="pages/rent_info.html" class="content-box">&ndash;&gt;-->
-    <!--<input type="hidden" value="房" name="keyword_post"> <input type="hidden" value="" name="rent_type_post">-->
-    <!--<input type="hidden" value="" name="district_post"> <input type="hidden" value="" name="subway_post"> <input-->
-    <!--type="hidden" value="" name="room_type_post"> <input type="hidden" value="" name="price_post">-->
-    <!--<input type="hidden" value="" name="num_id"> <input type="hidden" value="0" name="num_contact"> <input-->
-    <!--type="hidden" value="87" name="num_content"> <input type="hidden" value="0" name="num_conditions">-->
-    <!--<input type="hidden" value="5" name="count"> <input type="hidden" value="district" name="a0"> <input-->
-    <!--type="hidden" value="" name="b0"> <input type="hidden" value="room_type" name="a1"> <input-->
-    <!--type="hidden" value="" name="b1"> <input type="hidden" value="rent_type" name="a2"> <input-->
-    <!--type="hidden" value="" name="b2"> <input type="hidden" value="price" name="a3"> <input type="hidden"-->
-    <!--value=""-->
-    <!--name="b3">-->
-    <!--<input type="hidden" value="subway" name="a4"> <input type="hidden" value="" name="b4">-->
-
-    <!--<a class="content-box positon-relative"-->
-    <!--href="rent_info.php?house_rent_id=128&amp;from=rentout_search&amp;keyword_get=房&amp;rent_type_get=null&amp;district_get=null&amp;subway_get=null&amp;room_type_get=null&amp;price_get=null">-->
-    <!--&lt;!&ndash;<a class="content-box">&ndash;&gt;-->
-    <!--&lt;!&ndash;房间属性简介_水平排列&ndash;&gt;-->
-
-    <!--<div class="abstract">-->
-    <!--<ul class="room-info">-->
-    <!--<li id="district">-->
-    <!--<span class="district">丰台&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
-    <!--</li>-->
-    <!--<li id="rent-type" class="text-right">-->
-    <!--<span class="subway">5号线</span>-->
-    <!--</li>-->
-    <!--<li class="passtime">5天前</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了&ndash;&gt;-->
-    <!--&lt;!&ndash;房间图片 float&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left">-->
-    <!--<img class="room-pic" alt="">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--<div class="pic-wrapper-float"-->
-    <!--style="background-image: url(images/1.jpg);"></div>-->
-    <!--&lt;!&ndash;房源描述 float&ndash;&gt;-->
-    <!--<div class="room-desc-abs">-->
-    <!--<h5><span class="title" style="display: none;"></span></h5>-->
-    <!--<p class="content">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，朝九晚五，次卧女生因工作原因，现转租次卧，整屋朝南，阳光很好，8平多，离地铁站八分钟步行，<font-->
-    <!--color="red">房</font>租2200，押金为一个月<font color="red">房</font>租，期望你是女…</p>-->
-    <!--</div>-->
-    <!--<div class="bottom-abstract">-->
-    <!--<ul class="room-info">-->
-    <!--&lt;!&ndash;房源状态描述&ndash;&gt;-->
-    <!--<li>-->
-    <!--<span class="house_rent_id">C128</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>-->
-    <!--<span class="want">0</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--&lt;!&ndash;<span class="set_top"></span>&ndash;&gt;-->
-    <!--<span class="price" style="color:red">2~2.5k</span>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-    <!--</a>-->
-    <!--<hr>-->
-    <!--</div>-->
-    <!--<div class="single_item" id="more_element_4">&lt;!&ndash;onclick="alert(this.innerHTML);"&ndash;&gt;-->
-    <!--&lt;!&ndash;<a href="pages/rent_info.html" class="content-box">&ndash;&gt;-->
-    <!--<input type="hidden" value="房" name="keyword_post"> <input type="hidden" value="" name="rent_type_post">-->
-    <!--<input type="hidden" value="" name="district_post"> <input type="hidden" value="" name="subway_post"> <input-->
-    <!--type="hidden" value="" name="room_type_post"> <input type="hidden" value="" name="price_post">-->
-    <!--<input type="hidden" value="" name="num_id"> <input type="hidden" value="0" name="num_contact"> <input-->
-    <!--type="hidden" value="87" name="num_content"> <input type="hidden" value="0" name="num_conditions">-->
-    <!--<input type="hidden" value="5" name="count"> <input type="hidden" value="district" name="a0"> <input-->
-    <!--type="hidden" value="" name="b0"> <input type="hidden" value="room_type" name="a1"> <input-->
-    <!--type="hidden" value="" name="b1"> <input type="hidden" value="rent_type" name="a2"> <input-->
-    <!--type="hidden" value="" name="b2"> <input type="hidden" value="price" name="a3"> <input type="hidden"-->
-    <!--value=""-->
-    <!--name="b3">-->
-    <!--<input type="hidden" value="subway" name="a4"> <input type="hidden" value="" name="b4">-->
-
-    <!--<a class="content-box positon-relative"-->
-    <!--href="rent_info.php?house_rent_id=128&amp;from=rentout_search&amp;keyword_get=房&amp;rent_type_get=null&amp;district_get=null&amp;subway_get=null&amp;room_type_get=null&amp;price_get=null">-->
-    <!--&lt;!&ndash;<a class="content-box">&ndash;&gt;-->
-    <!--&lt;!&ndash;房间属性简介_水平排列&ndash;&gt;-->
-
-    <!--<div class="abstract">-->
-    <!--<ul class="room-info">-->
-    <!--<li id="district">-->
-    <!--<span class="district">丰台&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
-    <!--</li>-->
-    <!--<li id="rent-type" class="text-right">-->
-    <!--<span class="subway">5号线</span>-->
-    <!--</li>-->
-    <!--<li class="passtime">5天前</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了&ndash;&gt;-->
-    <!--&lt;!&ndash;房间图片 float&ndash;&gt;-->
-    <!--&lt;!&ndash;-->
-    <!--<div class="pic-wrapper float-left">-->
-    <!--<img class="room-pic" alt="">-->
-    <!--</div>-->
-    <!--&ndash;&gt;-->
-    <!--<div class="pic-wrapper-float"-->
-    <!--style="background-image: url(images/1.jpg);"></div>-->
-    <!--&lt;!&ndash;房源描述 float&ndash;&gt;-->
-    <!--<div class="room-desc-abs">-->
-    <!--<h5><span class="title" style="display: none;"></span></h5>-->
-    <!--<p class="content">自如的次卧转租，两室一厅，主卧两个女生，有稳定工作，朝九晚五，次卧女生因工作原因，现转租次卧，整屋朝南，阳光很好，8平多，离地铁站八分钟步行，<font-->
-    <!--color="red">房</font>租2200，押金为一个月<font color="red">房</font>租，期望你是女…</p>-->
-    <!--</div>-->
-    <!--<div class="bottom-abstract">-->
-    <!--<ul class="room-info">-->
-    <!--&lt;!&ndash;房源状态描述&ndash;&gt;-->
-    <!--<li>-->
-    <!--<span class="house_rent_id">C128</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>-->
-    <!--<span class="want">0</span>-->
-    <!--</li>-->
-    <!--<li>-->
-    <!--&lt;!&ndash;<span class="set_top"></span>&ndash;&gt;-->
-    <!--<span class="price" style="color:red">2~2.5k</span>-->
-    <!--</li>-->
-    <!--</ul>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;</a>&ndash;&gt;-->
-    <!--</a>-->
-    <!--<hr>-->
-    <!--</div>-->
-
-    <!--<a href="javascript:;" class="get_more"-->
-    <!--style="color: rgb(0, 123, 196); text-decoration: none; outline: none; display: block;">::more::</a>-->
-    <!--<div class="more_loader_spinner" style="display: none;"></div>-->
-    <!--</div>-->
-
-
 </div>
 <nav class="foot-nav">
     <!--nav-item-active适用于显示激活状态的类名-->

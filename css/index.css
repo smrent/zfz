@@ -231,8 +231,11 @@ button, input, optgroup, select, textarea {
     margin-bottom: 21px;
 }
 .room-info, .state {
-    color: #7a7777;
+    /*color: #7a7777;*/
     overflow: hidden;
+}
+.room-info{
+    color: #3f98ff;
 }
 ul li {
     display: inline-block;

@@ -140,6 +140,7 @@ div .content-box {
     width: 100%;
     padding: 10px 0 8px 0;
     font-size: 0.9em;
+
 }
 
 .first-content-box.content-box {
@@ -185,7 +186,7 @@ div .content-box {
 }
 
 .abstract .room-info li:last-child {
-    float: right;
+    /*float: right;*/
     width: auto;
     padding-right: 3%;
 }
@@ -209,11 +210,11 @@ a.active {
     overflow: hidden;
 }
 
-#district {
+.color-blue {
     color: #3f98ff;
 }
 
-#price {
+.color-red {
     color: red;
 }
 
