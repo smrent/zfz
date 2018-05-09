@@ -1,0 +1,152 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>水木租房子-出租详情-C135</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/rent_info_main.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.more.rent_want.js"></script>
+		<!--<script type="text/javascript" src="../js/Check_AddRentWant.js"></script>-->
+		<script type="text/javascript">
+			$(function(){
+				var house_rent_id=$(" input[ name='house_rent_id' ] ").val();
+				//var user_house_rent_id=$(" input[ name='house_rent_id' ] ").val();
+				//alert(house_rent_id);
+				$('#more').more({'address': '../php/data_rent_want.php?house_rent_id='+house_rent_id})
+				//alert('111');
+			});
+			function PostFM(){
+			document.getElementById('frm').submit();	
+			}
+			function ReminderYanZheng(){
+			alert("是否置顶推荐");
+			}
+			function ReminderZuidi(){
+			alert("是否承诺：给水木租房需求验证租户的租金价格，全网最低");
+			}
+			function ReminderYanZhengRentWant(){
+			alert("是否做过需求验证，做了验证排在前面哦");
+			}
+			function ReminderXueYe(){
+			alert("是否填写了学业信息，毕业大学或所在行业");
+			}
+
+			function Check_AddRentWant(){
+			 var w_or_m_addrentwant_value = document.getElementById("w_or_m_addrentwant").value;//微信号or手机号
+			 var contact_addrentwant_value = document.getElementById("contact_addrentwant").value;//联系方式内容
+			var contact_addrentwant = document.getElementById("contact_addrentwant");
+			 if(contact_addrentwant_value==""){//联系方式为空
+			 	 if(w_or_m_addrentwant_value=="微信号"){
+			 			alert ("请输入微信号");
+			   		document.form.contact_addrentwant.focus();
+			   		return false;
+			 	 }else if (w_or_m_addrentwant_value=="手机号"){
+			 			alert ("请输入手机号");
+			   		document.form.contact_addrentwant.focus();
+			   		return false;
+			 	 }
+			 }else{//联系方式不为空
+			 	 if(w_or_m_addrentwant_value=="微信号"){
+			 	 	  //alert(contact_addrentwant_value);
+			 	 	  if(contact_addrentwant_value.length > 20){//微信6-20的字母、数字、下划线或减号，以字母开头
+						 	 alert ("20字以内");
+						   document.form.contact_addrentwant.focus();
+						   return false;
+						}
+			 	 		if(contact_addrentwant_value.indexOf("@") != -1){//含有@
+			 	 			  //alert('有at');
+			 	 				var myreg=/^([a-z0-9A-Z]+[-|.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?.)+[a-zA-Z]{2,}$/;
+			 	 				if(!myreg.test(contact_addrentwant_value)) {
+								    alert('请输入有效的微信号！');
+								    document.form.contact_addrentwant.focus();
+								    return false;
+							  }else{
+							   	  document.form.submit();
+							  }
+					 	}else{//不含有@
+					 		   //alert('无at');
+					 		   var reg1 = /[1-9]\\d{5,19}/;  //qq号 6 - 20
+                 var reg2 = /1[3-9]\\d{9}/;  //qq号或者手机号 11
+                 var reg3 = /[a-zA-Z][-_a-zA-Z0-9]{5,19}/; //微信号带字母的 6-20
+                 if(reg1.test(contact_addrentwant_value)){
+                 		document.form.submit();
+                 }else if(reg2.test(contact_addrentwant_value)){
+                 		document.form.submit();
+                 }else  if(reg3.test(contact_addrentwant_value)){
+                 		document.form.submit();
+                 }else{
+                 		alert('请输入有效的微信号！');
+								    document.form.contact_addrentwant.focus();
+								    return false;
+                 }
+					 	}
+			 	 }else if (w_or_m_addrentwant_value=="手机号"){
+						//var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+						//var myreg = /1[3-9]\\d{9}/;
+						/**
+						 * 验证手机号码
+						 *
+						 * 移动号码段:139、138、137、136、135、134、150、151、152、157、158、159、182、183、187、188、147
+						 * 联通号码段:130、131、132、136、185、186、145
+						 * 电信号码段:133、153、180、189
+						 */
+						//var myreg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))+\d{8}$/;
+						var myreg = /^(1[3-9])+\d{9}$/;
+					  if(contact_addrentwant_value.length != 11) {
+						    alert('请输入有效的手机号！');
+						    document.form.contact_addrentwant.focus();
+						    return false;
+					  }else if(!myreg.test(contact_addrentwant_value)) {
+						    alert('请输入有效的手机号！');
+						    document.form.contact_addrentwant.focus();
+						    return false;
+					  }else{
+					   	  document.form.submit();
+					  }
+			   }
+			 }
+			}
+		</script>
+</head>
+<body style="">
+<header>
+    <!--搜索链接跳转-->
+    <div class="nav-btn nav-return">
+    	<form id="frm" action="rentout_search.php" method="get">
+			<input name="keyword" value="" type="hidden">
+			<input name="rent_type" value="" type="hidden">
+			<input name="district" value="" type="hidden">
+			<input name="subway" value="" type="hidden">
+			<input name="room_type" value="" type="hidden">
+			<input name="price" value="" type="hidden">
+			</form>
+         <a href="../index.php" style="float:left;">	
+        	
+            <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+            <div class="return">返回</div>
+        </a>
+        <div class="nav-btn nav-logo">
+        	<img class="logo" src="../images/logo.jpg" alt="水木租房子">
+    		</div>
+    		<!-- fenxiangdao -->
+				
+				<!-- fenxiangdao END -->
+    </div>
+    
+</header>
+
+<div class=" body">
+  <!--租房信息-->
+  <!--<a href="../pages/rent_info.html" class="content-box">-->
+  
+	<!--<a class="content-box">-->
+    <a class="content-box" href="https://m.weibo.cn/status/4232830177669664"><div class="image-pic-float" alt="" style="background-image: url(../images/house_img/C135.jpg);"></div><div class="content-wrapper float-left"><h4><i class="fa fa-arrow-up" aria-hidden="true" style="color:red;"></i><span>生物医药基地，自如次卧13.5平1390/月，服务费</span></h4><div class="abstract"><ul class="room-info"><li id="district" style="width:auto;">大兴/单间/转租</li><li id="rent-type" style="float:right;"><span class="passtime">1星期前</span></li></ul></div><div class="state"><ul class="state-info"><li><span id="watcher">C135</span></li><li class="text-center"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><span id="want">0</span></li><li id="price" class="text-right">1~1.5k</li></ul></div></div></a><div id="tab-bar" class="tab-bar"><a href="#" data-content="tab-content-1" class="tab-btn active">房源信息</a><a href="#" data-content="tab-content-2" class="tab-btn">联系出租人</a></div><a style="display: inline-block; height: 209px;" id="tab-content-1" class="content-box"><div class="room-desc float-left"><p>生物医药基地，自如次卧13.5平1390/月，服务费100多/月。小区24小时保安，保洁阿姨每月2次清洁公共区域卫生。小区到地铁站、商场只需3分钟。一共5家合租，自如正规次卧有合同，不赚取中间差价，一切费用均摊就行。有3家是经常出差的，平均每个月能回来最多住10天。</p></div></a><div style="display: none; height: 209px;" id="tab-content-2" class="owner-info"><div class="pic-wrapper"><img src="../images/wyz.jpg" alt="房东" style="width:70%;height:70%;"><div class="verify"><div class="star-box"><div class="star_sum"><div class="star"><i class="fa fa-star-o"></i></div><div class="star"><i class="fa fa-star-o"></i></div><div class="star"><i class="fa fa-star-o"></i></div><div class="star"><i class="fa fa-star-o"></i></div></div></div></div></div><div class="info-box float-left"><ul><li>微信号码：<span>y3151846119</span></li><li>Ta的出租：<span><a style="color:blue;text-decoration:underline;" href="user_rent.php?w_or_m=微信号&amp;contact=y3151846119&amp;house_rent_id=135&amp;gender=">2</a></span></li><li>Ta的求租：<span>0</span></li><li><a style="color:#000;" onclick="ReminderYanZheng()">置顶推荐</a>：<span onclick="ReminderYanZheng()">是</span></li><li><a style="color:#999;font-size:10px;">置顶推荐请移步公众号或微博</a><a style="font-size:10px;color:blue;text-decoration:underline;" href="https://m.weibo.cn/u/3211938893">水木租房</a></li></ul></div></div>
+      </div>
+
+
+
+<script src="../js/showTab.js"></script>
+
+</body></html>

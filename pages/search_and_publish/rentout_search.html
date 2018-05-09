@@ -1,0 +1,379 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>水木租房子-出租搜索结果</title>
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link href="../css/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="../css/rent_info_main.css"><!--use rent_info css-->
+		<link rel="stylesheet" href="../css/rentout_search.css">
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.more.rentout_search.js"></script>
+		<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			var keyword=$(" input[ name='keyword_post' ] ").val();
+			var rent_type=$(" input[ name='rent_type_post' ] ").val();
+			var district=$(" input[ name='district_post' ] ").val();
+			var subway=$(" input[ name='subway_post' ] ").val();
+			var room_type=$(" input[ name='room_type_post' ] ").val();
+			var price=$(" input[ name='price_post' ] ").val();
+			var num_id=$(" input[ name='num_id' ] ").val();
+			var num_contact=$(" input[ name='num_contact' ] ").val();
+			var num_content=$(" input[ name='num_content' ] ").val();
+			var num_conditions=$(" input[ name='num_conditions' ] ").val();
+			
+			var count=$(" input[ name='count' ] ").val();
+			var a0=$(" input[ name='a0' ] ").val();
+			var b0=$(" input[ name='b0' ] ").val();
+			var a1=$(" input[ name='a1' ] ").val();
+			var b1=$(" input[ name='b1' ] ").val();
+			var a2=$(" input[ name='a2' ] ").val();
+			var b2=$(" input[ name='b2' ] ").val();
+			var a3=$(" input[ name='a3' ] ").val();
+			var b3=$(" input[ name='b3' ] ").val();
+			var a4=$(" input[ name='a4' ] ").val();
+			var b4=$(" input[ name='b4' ] ").val();
+			
+			if(keyword!=""){//按关键字搜索
+				//alert("rent_type为空");
+				if(num_id == 0 && num_contact == 0 && num_content == 0){//关键字搜索，没有搜到结果 && rent_type ==""
+					var innerHTML="<a class='content-box positon-relative'>没有找到该关键字对应的出租</a><br>您可以返回重新搜索";
+					document.getElementById('more').innerHTML=innerHTML; 
+				}else{
+					$('#more').more({'address': '../php/data_rentout_search.php?keyword='+keyword})
+				}
+			}else{//按条件搜索
+				//alert("rent_type不为空");
+				//alert(rent_type);
+				//alert(num_conditions);
+				if(num_conditions == 0){//条件搜索，没有搜到结果
+					var innerHTML="<a class='content-box positon-relative'>没有找到该条件对应的出租</a><br>您可以返回重新搜索";
+					document.getElementById('more').innerHTML=innerHTML; 
+				}else{
+					//alert("num_conditions不为0");
+					$('#more').more({'address': '../php/data_rentout_search.php?renttype='+rent_type+'&district='+district+'&subway='+subway+'&roomtype='+room_type+'&price='+price+'&count='+count+'&a0='+a0+'&b0='+b0+'&a1='+a1+'&b1='+b1+'&a2='+a2+'&b2='+b2+'&a3='+a3+'&b3='+b3+'&a4='+a4+'&b4='+b4})
+				}
+				//var test='../php/data_rentout_search.php?renttype='+rent_type+'&district='+district+'&subway='+subway+'&room_type='+room_type+'&price='+price;
+				//alert(test);
+			}
+			//var address_php='../php/data_user_rent.php?w_or_m='+w_or_m+'&contact='+contact+'&house_rent_id='+user_house_rent_id+'&user_want='+user_want;
+			//alert(address_php);
+			//$('#more').more({'address': '../php/data_rentout_search.php?keyword='+keyword+'&rent_type='+rent_type+'&district='+district+'&subway='+subway+'&room_type='+room_type})
+			//alert('111');
+		});
+		//返回之前浏览位置
+		 $(function () {
+        var str = window.location.href;
+        str = str.substring(str.lastIndexOf("/") + 1);
+        if ($.cookie(str)) {
+            $("html,body").animate({ scrollTop: $.cookie(str) }, 1000);
+        }else {
+        }
+    })
+    
+    $(window).scroll(function () {
+        var str = window.location.href;
+        str = str.substring(str.lastIndexOf("/") + 1);
+        var top = $(document).scrollTop();
+        $.cookie(str, top, { path: '/' });
+        return $.cookie(str);
+    })
+		</script>
+</head>
+<body style="">
+
+<header>
+    <div class="nav-btn nav-return">
+			    	<a href="search_and_publish/rentout_search.html">
+            <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+            <div class="return">返回</div>
+        </a>
+    </div>
+    <div class="phone-info">
+    <span style="color:red;">海淀+10号线</span>	  </div>
+</header>
+<br>
+<div class=" body">
+    <!--租房信息-->
+    <div id="more">
+        <div style="display: none;"><div class="single_item"><!--onclick="alert(this.innerHTML);"-->
+					<!--<a href="pages/rent_info.html" class="content-box">-->
+					<input type="hidden" value="" name="keyword_post">					<input type="hidden" value="不限" name="rent_type_post">					<input type="hidden" value="海淀" name="district_post">					<input type="hidden" value="10号线" name="subway_post">					<input type="hidden" value="不限" name="room_type_post">					<input type="hidden" value="不限" name="price_post">					<input type="hidden" value="" name="num_id">					<input type="hidden" value="0" name="num_contact">					<input type="hidden" value="141" name="num_content">					<input type="hidden" value="4" name="num_conditions">					
+					<input type="hidden" value="2" name="count">					<input type="hidden" value="district" name="a0">					<input type="hidden" value="海淀" name="b0">					<input type="hidden" value="subway" name="a1">					<input type="hidden" value="10号线" name="b1">					<input type="hidden" value="" name="a2">					<input type="hidden" value="" name="b2">					<input type="hidden" value="" name="a3">					<input type="hidden" value="" name="b3">					<input type="hidden" value="" name="a4">					<input type="hidden" value="" name="b4">					
+				
+					<a class="content-box positon-relative" href="rent_info.php?house_rent_id=22&amp;from=rentout_search&amp;keyword_get=null&amp;rent_type_get=不限&amp;district_get=海淀&amp;subway_get=10号线&amp;room_type_get=不限&amp;price_get=不限">
+					<!--<a class="content-box">-->
+						<!--房间属性简介_水平排列-->
+			
+            <div class="abstract">
+                <ul class="room-info">
+                    <li id="district">
+                        <span class="district">海淀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </li>   
+                    <li id="rent-type" class="text-right">
+                        <span class="subway">10号线</span>
+                    </li>
+                    <li class="passtime">3个月前</li>
+                </ul>
+            </div>
+						<!--<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>-->
+            
+            <!--使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了-->
+						<!--房间图片 float-->
+						<!--
+		        <div class="pic-wrapper float-left">
+		            <img class="room-pic" alt="">
+		        </div>
+		        -->
+		        <div class="pic-wrapper-float" style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+		        <!--房源描述 float-->
+            <div class="room-desc-abs">
+            	  <h5><span class="title" style="display: none;"></span></h5>
+                <p class="content">海淀区学院桥北科大校内南北两居半，五层精装修，7500整租。微信号kakajiujia。…</p>
+            </div>
+            <div class="bottom-abstract">
+                <ul class="room-info">
+                    <!--房源状态描述-->
+                    <li>
+                        <span class="house_rent_id">C22</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="want">0</span>
+                    </li>
+                    <li>
+                        <!--<span class="set_top"></span>-->
+                        <span class="price" style="color:red">7~7.5k</span>
+                    </li>
+                </ul>
+            </div>
+					<!--</a>-->
+					</a>
+					<hr>
+        </div></div>
+        <div class="single_item" id="more_element_1"><!--onclick="alert(this.innerHTML);"-->
+					<!--<a href="pages/rent_info.html" class="content-box">-->
+					<input type="hidden" value="" name="keyword_post">					<input type="hidden" value="不限" name="rent_type_post">					<input type="hidden" value="海淀" name="district_post">					<input type="hidden" value="10号线" name="subway_post">					<input type="hidden" value="不限" name="room_type_post">					<input type="hidden" value="不限" name="price_post">					<input type="hidden" value="" name="num_id">					<input type="hidden" value="0" name="num_contact">					<input type="hidden" value="141" name="num_content">					<input type="hidden" value="4" name="num_conditions">					
+					<input type="hidden" value="2" name="count">					<input type="hidden" value="district" name="a0">					<input type="hidden" value="海淀" name="b0">					<input type="hidden" value="subway" name="a1">					<input type="hidden" value="10号线" name="b1">					<input type="hidden" value="" name="a2">					<input type="hidden" value="" name="b2">					<input type="hidden" value="" name="a3">					<input type="hidden" value="" name="b3">					<input type="hidden" value="" name="a4">					<input type="hidden" value="" name="b4">					
+				
+					<a class="content-box positon-relative" href="rent_info.php?house_rent_id=99&amp;from=rentout_search&amp;keyword_get=null&amp;rent_type_get=不限&amp;district_get=海淀&amp;subway_get=10号线&amp;room_type_get=不限&amp;price_get=不限">
+					<!--<a class="content-box">-->
+						<!--房间属性简介_水平排列-->
+			
+            <div class="abstract">
+                <ul class="room-info">
+                    <li id="district">
+                        <span class="district">海淀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;单间&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;转租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </li>   
+                    <li id="rent-type" class="text-right">
+                        <span class="subway">10号线</span>
+                    </li>
+                    <li class="passtime">3个月前</li>
+                </ul>
+            </div>
+						<!--<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>-->
+            
+            <!--使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了-->
+						<!--房间图片 float-->
+						<!--
+		        <div class="pic-wrapper float-left">
+		            <img class="room-pic" alt="">
+		        </div>
+		        -->
+		        <div class="pic-wrapper-float" style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+		        <!--房源描述 float-->
+            <div class="room-desc-abs">
+            	  <h5><span class="title" style="display: none;"></span></h5>
+                <p class="content">知春路锦秋家园朝南卧室转租，18年七月到期。两张单人床，二十平左右，朝南，阳光充足。地理位置特别好，交通方便(知春路、西土城地铁站)离地铁站特近，离北航走路一分钟。年后可入住！！！外赠…</p>
+            </div>
+            <div class="bottom-abstract">
+                <ul class="room-info">
+                    <!--房源状态描述-->
+                    <li>
+                        <span class="house_rent_id">C99</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="want">0</span>
+                    </li>
+                    <li>
+                        <!--<span class="set_top"></span>-->
+                        <span class="price" style="color:red">2.5~3k</span>
+                    </li>
+                </ul>
+            </div>
+					<!--</a>-->
+					</a>
+					<hr>
+        </div><div class="single_item" id="more_element_2"><!--onclick="alert(this.innerHTML);"-->
+					<!--<a href="pages/rent_info.html" class="content-box">-->
+					<input type="hidden" value="" name="keyword_post">					<input type="hidden" value="不限" name="rent_type_post">					<input type="hidden" value="海淀" name="district_post">					<input type="hidden" value="10号线" name="subway_post">					<input type="hidden" value="不限" name="room_type_post">					<input type="hidden" value="不限" name="price_post">					<input type="hidden" value="" name="num_id">					<input type="hidden" value="0" name="num_contact">					<input type="hidden" value="141" name="num_content">					<input type="hidden" value="4" name="num_conditions">					
+					<input type="hidden" value="2" name="count">					<input type="hidden" value="district" name="a0">					<input type="hidden" value="海淀" name="b0">					<input type="hidden" value="subway" name="a1">					<input type="hidden" value="10号线" name="b1">					<input type="hidden" value="" name="a2">					<input type="hidden" value="" name="b2">					<input type="hidden" value="" name="a3">					<input type="hidden" value="" name="b3">					<input type="hidden" value="" name="a4">					<input type="hidden" value="" name="b4">					
+				
+					<a class="content-box positon-relative" href="rent_info.php?house_rent_id=78&amp;from=rentout_search&amp;keyword_get=null&amp;rent_type_get=不限&amp;district_get=海淀&amp;subway_get=10号线&amp;room_type_get=不限&amp;price_get=不限">
+					<!--<a class="content-box">-->
+						<!--房间属性简介_水平排列-->
+			
+            <div class="abstract">
+                <ul class="room-info">
+                    <li id="district">
+                        <span class="district">海淀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </li>   
+                    <li id="rent-type" class="text-right">
+                        <span class="subway">10号线</span>
+                    </li>
+                    <li class="passtime">3个月前</li>
+                </ul>
+            </div>
+						<!--<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>-->
+            
+            <!--使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了-->
+						<!--房间图片 float-->
+						<!--
+		        <div class="pic-wrapper float-left">
+		            <img class="room-pic" alt="">
+		        </div>
+		        -->
+		        <div class="pic-wrapper-float" style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+		        <!--房源描述 float-->
+            <div class="room-desc-abs">
+            	  <h5><span class="title" style="display: none;"></span></h5>
+                <p class="content">个人真实房源，购房合同可查，因孩子考上音乐附中全家搬至孩子学校附近租房陪读，自家房出租平衡生活。此房是八一中学的教师居民楼，大两居103平米。…</p>
+            </div>
+            <div class="bottom-abstract">
+                <ul class="room-info">
+                    <!--房源状态描述-->
+                    <li>
+                        <span class="house_rent_id">C78</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="want">0</span>
+                    </li>
+                    <li>
+                        <!--<span class="set_top"></span>-->
+                        <span class="price" style="color:red">8k以上</span>
+                    </li>
+                </ul>
+            </div>
+					<!--</a>-->
+					</a>
+					<hr>
+        </div><div class="single_item" id="more_element_3"><!--onclick="alert(this.innerHTML);"-->
+					<!--<a href="pages/rent_info.html" class="content-box">-->
+					<input type="hidden" value="" name="keyword_post">					<input type="hidden" value="不限" name="rent_type_post">					<input type="hidden" value="海淀" name="district_post">					<input type="hidden" value="10号线" name="subway_post">					<input type="hidden" value="不限" name="room_type_post">					<input type="hidden" value="不限" name="price_post">					<input type="hidden" value="" name="num_id">					<input type="hidden" value="0" name="num_contact">					<input type="hidden" value="141" name="num_content">					<input type="hidden" value="4" name="num_conditions">					
+					<input type="hidden" value="2" name="count">					<input type="hidden" value="district" name="a0">					<input type="hidden" value="海淀" name="b0">					<input type="hidden" value="subway" name="a1">					<input type="hidden" value="10号线" name="b1">					<input type="hidden" value="" name="a2">					<input type="hidden" value="" name="b2">					<input type="hidden" value="" name="a3">					<input type="hidden" value="" name="b3">					<input type="hidden" value="" name="a4">					<input type="hidden" value="" name="b4">					
+				
+					<a class="content-box positon-relative" href="rent_info.php?house_rent_id=4&amp;from=rentout_search&amp;keyword_get=null&amp;rent_type_get=不限&amp;district_get=海淀&amp;subway_get=10号线&amp;room_type_get=不限&amp;price_get=不限">
+					<!--<a class="content-box">-->
+						<!--房间属性简介_水平排列-->
+			
+            <div class="abstract">
+                <ul class="room-info">
+                    <li id="district">
+                        <span class="district">海淀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </li>   
+                    <li id="rent-type" class="text-right">
+                        <span class="subway">10号线</span>
+                    </li>
+                    <li class="passtime">3个月前</li>
+                </ul>
+            </div>
+						<!--<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>-->
+            
+            <!--使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了-->
+						<!--房间图片 float-->
+						<!--
+		        <div class="pic-wrapper float-left">
+		            <img class="room-pic" alt="">
+		        </div>
+		        -->
+		        <div class="pic-wrapper-float" style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+		        <!--房源描述 float-->
+            <div class="room-desc-abs">
+            	  <h5><span class="title" style="display: none;"></span></h5>
+                <p class="content">位置：牡丹园北路，中鑫嘉园。格局：72平，中间楼层+大落地窗，视野无敌(2005年次新小区，有电梯)，中等装修，一直自住，这几天能把房子腾出来。房主直租，无中介费，7300元/月，季付…</p>
+            </div>
+            <div class="bottom-abstract">
+                <ul class="room-info">
+                    <!--房源状态描述-->
+                    <li>
+                        <span class="house_rent_id">C4</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="want">1</span>
+                    </li>
+                    <li>
+                        <!--<span class="set_top"></span>-->
+                        <span class="price" style="color:red">7~7.5k</span>
+                    </li>
+                </ul>
+            </div>
+					<!--</a>-->
+					</a>
+					<hr>
+        </div><div class="single_item" id="more_element_4"><!--onclick="alert(this.innerHTML);"-->
+					<!--<a href="pages/rent_info.html" class="content-box">-->
+					<input type="hidden" value="" name="keyword_post">					<input type="hidden" value="不限" name="rent_type_post">					<input type="hidden" value="海淀" name="district_post">					<input type="hidden" value="10号线" name="subway_post">					<input type="hidden" value="不限" name="room_type_post">					<input type="hidden" value="不限" name="price_post">					<input type="hidden" value="" name="num_id">					<input type="hidden" value="0" name="num_contact">					<input type="hidden" value="141" name="num_content">					<input type="hidden" value="4" name="num_conditions">					
+					<input type="hidden" value="2" name="count">					<input type="hidden" value="district" name="a0">					<input type="hidden" value="海淀" name="b0">					<input type="hidden" value="subway" name="a1">					<input type="hidden" value="10号线" name="b1">					<input type="hidden" value="" name="a2">					<input type="hidden" value="" name="b2">					<input type="hidden" value="" name="a3">					<input type="hidden" value="" name="b3">					<input type="hidden" value="" name="a4">					<input type="hidden" value="" name="b4">					
+				
+					<a class="content-box positon-relative" href="rent_info.php?house_rent_id=22&amp;from=rentout_search&amp;keyword_get=null&amp;rent_type_get=不限&amp;district_get=海淀&amp;subway_get=10号线&amp;room_type_get=不限&amp;price_get=不限">
+					<!--<a class="content-box">-->
+						<!--房间属性简介_水平排列-->
+			
+            <div class="abstract">
+                <ul class="room-info">
+                    <li id="district">
+                        <span class="district">海淀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二室&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </li>   
+                    <li id="rent-type" class="text-right">
+                        <span class="subway">10号线</span>
+                    </li>
+                    <li class="passtime">3个月前</li>
+                </ul>
+            </div>
+						<!--<h4><div class="title" style="float:right;">科技大学老师，校内大两居寻靠谱租客</div></h4>-->
+            
+            <!--使用h5标签基本可以容纳18个字,如果需要更小的字体,直接改为h6就可以了-->
+						<!--房间图片 float-->
+						<!--
+		        <div class="pic-wrapper float-left">
+		            <img class="room-pic" alt="">
+		        </div>
+		        -->
+		        <div class="pic-wrapper-float" style="background-image: url(&quot;../images/cover_img/海淀.jpg&quot;);"></div>
+		        <!--房源描述 float-->
+            <div class="room-desc-abs">
+            	  <h5><span class="title" style="display: none;"></span></h5>
+                <p class="content">海淀区学院桥北科大校内南北两居半，五层精装修，7500整租。微信号kakajiujia。…</p>
+            </div>
+            <div class="bottom-abstract">
+                <ul class="room-info">
+                    <!--房源状态描述-->
+                    <li>
+                        <span class="house_rent_id">C22</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="want">0</span>
+                    </li>
+                    <li>
+                        <!--<span class="set_top"></span>-->
+                        <span class="price" style="color:red">7~7.5k</span>
+                    </li>
+                </ul>
+            </div>
+					<!--</a>-->
+					</a>
+					<hr>
+        </div>
+  	<div class="more_loader_spinner" style="display: none;"></div></div> 
+    
+    
+
+
+</div>
+
+</body></html>

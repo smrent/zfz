@@ -218,6 +218,10 @@ a.active {
     color: red;
 }
 
+#price {
+    color: red;
+}
+
 .room_type {
     display: inline-block;
 }
