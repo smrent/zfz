@@ -1,0 +1,54 @@
+.red{
+    color:red;
+}
+div.content-box{
+    width: 100%;
+    display: block;
+}
+.abstract ul li{
+    width: 23%;
+    /*padding: 2%;*/
+    text-align: center;
+}
+.pic-wrapper-float{
+    float: left;
+}
+.room-desc-abs{
+    width: 68%;
+    padding: 0 1% 1% 1%;
+    display: inline-block;
+}
+.room-desc-abs p{
+    font-size: 0.8em;
+    margin-bottom: 21px;
+}
+.positon-relative{
+    position: relative;
+}
+.bottom-abstract{
+    width:68%;
+    position: absolute;
+    right:0;
+    bottom: 20px;
+    text-align: center;
+}
+
+.bottom-abstract ul li{
+    width: 30%;
+}
+.bottom-abstract ul li:first-child{
+    text-align: left;
+}
+.bottom-abstract ul li:last-child{
+    text-align: right;
+}
+.valid{
+    color:cornflowerblue;
+}
+.non-valid{
+    color:#f34646;
+}
+a.content-box.positon-relative {
+    padding: 10px 0 20px 0;
+    margin: 0;
+}

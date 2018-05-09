@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+ul li {
+    display: inline-block;
+}
+
+img {
+    /*height:100%;*/
+    width: 100%;
+}
+
+a, a:visited, a:link, a:focus, a:hover {
+    text-decoration: none;
+    display: inline-block;
+    color: #999;
+}
+
+hr {
+    border: 1px #f3ebeb solid;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/*------------------------------header-----------------------*/
+header {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+}
+
+.nav-btn {
+    float: left;
+
+}
+
+.nav-btn a {
+    padding: 10px;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.nav-publish, .nav-search {
+    width: 18%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.nav-logo {
+    width: 40%;
+    margin: 0 12%;
+    text-align: center;
+}
+
+.total_views {
+    color: green;
+    font-size: 10px;
+    padding: 0;
+}
+
+/*---------------------------footer-------------------------*/
+footer {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+}
+
+.label {
+    text-align: center;
+}
+
+.fo-nav {
+    /*width:25%;*/
+    width: 49%;
+
+    text-align: center;
+}
+
+.fo-nav:first-child {
+    border-right: 1px #ccc solid;
+}
+
+.nav-btn.fo-nav a {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-btn a {
+    font-size: 10px;
+}
+
+.pic-wrapper {
+    width: 30%;
+}
+
+/*-----------------------body--------------------------*/
+.body {
+    width: 98%;
+    margin: 15% 0 18% 2%;
+}
+
+div .content-box {
+    overflow: hidden;
+    color: black;
+    width: 100%;
+    padding: 20px 0 17px 0;
+}
+
+.first-content-box.content-box {
+    padding-top: 0;
+}
+
+.pic-wrapper-float {
+    float: left;
+    padding-bottom: 30%;
+    background-size: 100% 100%;
+    width: 30%;
+    display: inline-block;
+    /*background-image: url(../images/cover_img/等待加载图片.jpg); 这个地方可以加入一个当图片正在加载时的效果图片*/
+}
+
+.content-box:hover, content-box:active {
+    /*background-color: gainsboro;*/
+    /*修复点击后的灰色责遮罩*/
+}
+
+.content-wrapper {
+    width: 67%;
+    /*height: 100%;*/
+    padding-left: 3%;
+}
+
+.text-red {
+    color: red;
+}
+
+.abstract, .state {
+    /* padding:3% 0; */
+}
+
+.abstract ul li, .state ul li {
+    width: 25%;
+    padding: 2% 0;
+}
+
+.abstract .room-info li:first-child {
+    float: left;
+    width: auto;
+}
+
+.abstract .room-info li:last-child {
+    float: right;
+    width: auto;
+    padding-right: 3%;
+}
+
+.state .state-info li:first-child {
+    float: left;
+
+}
+.state .state-info li:last-child {
+    float: right;
+    width: auto;
+    padding-right: 3%;
+}
+
+a.active {
+    color: #32b550;
+}
+
+.room-info, .state {
+    color: #7a7777;
+    overflow: hidden;
+}
+
+#district {
+    color: #3f98ff;
+}
+
+#price {
+    color: red;
+}
+
+.room_type {
+    display: inline-block;
+}
+
+.area {
+    display: inline-block;
+}
+
+/*标题手机号*/
+.phone-info {
+    text-align: center;
+    color: #a1a1a1;
+}
+
+/*James add for infinite loading*/
+#more {
+    margin: 0px auto;
+}
+
+/*border: 1px solid #999;*/
+.get_more {
+    margin: 10px;
+    text-align: center
+}
+
+.more_loader_spinner {
+    width: 20px;
+    height: 20px;
+    margin: 10px auto;
+    background: url(../images/loader.gif) no-repeat;
+}
