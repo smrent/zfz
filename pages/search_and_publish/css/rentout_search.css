@@ -52,13 +52,12 @@ a.content-box.positon-relative {
     padding: 20px 0 20px 0;
     margin: 0;
 }
-.house-type{
-    bottom:41px;
+.house-type {
+    bottom: 41px;
     width: 100%;
-
     text-align: left;
     color: #3d69ff;
-
+    font-size: 14px;
 }
 
 
