@@ -20,7 +20,7 @@ div.content-box{
 }
 .room-desc-abs p{
     font-size: 0.8em;
-    margin-bottom: 21px;
+    margin-bottom: 41px;
 }
 .positon-relative{
     position: relative;
@@ -30,7 +30,7 @@ div.content-box{
     position: absolute;
     right:0;
     bottom: 20px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .bottom-abstract ul li{
@@ -54,13 +54,14 @@ a.content-box.positon-relative {
 }
 .house-type{
     bottom:41px;
-    width: 66%;
-    position: absolute;
-    right: 0;
+    width: 100%;
+
     text-align: left;
     color: #3d69ff;
-    padding-left:2%;
+
 }
-.house-type li{
-    width: 30%;
+
+
+.text-left{
+    text-align: left;
 }

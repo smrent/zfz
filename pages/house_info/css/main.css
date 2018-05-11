@@ -168,11 +168,11 @@ div .content-box {
     width: auto;
 }
 
-.abstract .room-info li:last-child {
-    float: right;
-    width: auto;
-    padding-right: 3%;
-}
+/*.abstract .room-info li:last-child {*/
+    /*float: right;*/
+    /*width: auto;*/
+    /*padding-right: 3%;*/
+/*}*/
 
 .state .state-info li:first-child {
     float: left;
@@ -231,4 +231,10 @@ a.active {
     height: 20px;
     margin: 10px auto;
     background: url(../images/loader.gif) no-repeat;
+}
+.color-blue {
+    color: #3f98ff;
+}
+.color-red {
+    color: red;
 }

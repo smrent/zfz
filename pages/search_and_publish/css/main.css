@@ -232,3 +232,6 @@ a.active {
     margin: 10px auto;
     background: url(../images/loader.gif) no-repeat;
 }
+.color-blue {
+    color: #3f98ff;
+}
