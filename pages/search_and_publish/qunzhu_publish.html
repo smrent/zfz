@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>发布群主</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="css/search.main.css" rel="stylesheet">
+    <!--<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="js/my.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	function Check_AddRentoutPublish(){//验证格式
+		//var rent_type=$(" input[ name='rent_type' ] ").val();
+		var rent_type=$("input[name='rent_type']:checked").val();
+		var district=$(" select[ name='district' ] ").val();
+		var subway=$(" select[ name='subway' ] ").val();
+		var room_type=$(" select[ name='room_type' ] ").val();
+		//var zuidi=$(" input[ name='zuidi' ] ").val();
+		var w_or_m=$(" select[ name='w_or_m' ] ").val();
+		var contact=$(" input[ name='contact' ] ").val();
+		var about=$(" textarea[ name='about' ] ").val();
+		//alert(contact);
+		//联系方式
+		if(contact==""){//联系方式为空
+			if(w_or_m=="微信号"){
+				alert ("请输入微信号");
+				document.form.contact.focus();
+				return false;
+			}else if (w_or_m=="手机号"){
+				alert ("请输入手机号");
+				document.form.contact.focus();
+				return false;
+			}
+		}else{//联系方式不为空
+			if(w_or_m=="微信号"){
+					 //alert("微信号");
+					 if(contact.indexOf("@") != -1){//含有@
+							//alert('有at');
+							var myreg=/^([a-z0-9A-Z]+[-|.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?.)+[a-zA-Z]{2,}$/;
+							if(!myreg.test(contact)) {
+								  alert('请输入有效的微信号！'); 
+								  document.form.contact.focus();
+								return false; 
+							}
+							if (about == ""){
+								alert ("请输入房子简介，更快出租哦~");
+								  document.form.about.focus();
+								  return false;
+						}
+					 }else{//不含有@
+							//alert('无at');
+							var reg1 = /^([1-9])+\d{5,19}$/;  //qq号 6 - 20
+			  var reg2 = /^(1[3-9])+\d{9}$/;  //qq号或者手机号 11
+			  var reg3 = /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/; //微信号带字母的 6-20
+			  if(reg1.test(contact)){
+				//alert('请输入有效的微信号！'); 
+							  //document.form.contact.focus();
+							  //return false; 
+							  //关于房子
+							if (about == ""){
+								alert ("请输入房子简介，更快出租哦~");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else if(reg2.test(contact)){
+				if (about == ""){
+								alert ("请输入房子简介，更快出租哦~");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else if(reg3.test(contact)){
+				if (about == ""){
+								alert ("请输入房子简介，更快出租哦~");
+								  document.form.about.focus();
+								  return false;
+							}
+			  }else{
+				alert('请输入有效的微信号！'); 
+								document.form.contact.focus();
+							  return false; 
+			  }
+					 }
+				}else if (w_or_m=="手机号"){
+					  //alert("手机号");
+						//var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+						//var myreg = /1[3-9]\\d{9}/; 
+						/**
+						 * 验证手机号码
+						 * 
+						 * 移动号码段:139、138、137、136、135、134、150、151、152、157、158、159、182、183、187、188、147
+						 * 联通号码段:130、131、132、136、185、186、145
+						 * 电信号码段:133、153、180、189
+						 */
+						//var myreg = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))+\d{8}$/;
+						var myreg = /^(1[3-9])+\d{9}$/;
+					  if(contact.length != 11) {
+							alert('请输入有效的手机号！'); 
+							document.form.contact.focus();
+							return false; 
+					  }else if(!myreg.test(contact)) {
+							alert('请输入有效的手机号！'); 
+							document.form.contact.focus();
+							return false; 
+					  }else {
+						  if (about == ""){
+								alert ("请输入房子简介，更快出租哦~");
+								  document.form.about.focus();
+								  return false;
+							}
+					  }
+			  }
+		}	
+	}
+	function countChar(){<!--字数统计-->
+		var curLength = document.getElementById("about").value.length;
+			if (curLength>140){
+				alert("超过字数限制，多出的字将被截断！" );
+				document.getElementById("about").value = document.getElementById("about").value.substr(0,140);
+				curLength = 140;
+			}
+		document.getElementById("counter").innerHTML = 140 - document.getElementById("about").value.length;
+	};
+	/*
+	function $(m){
+		 return document.getElementById(m);
+	}*/
+	function xiangying(){
+	  if(/msie/i.test(navigator.userAgent)){
+		  document.getElementById("about").onpropertychange = countChar;
+		 } else {
+		  document.getElementById("about").addEventListener("input",countChar,false);
+		 }
+	}
+	window.onload = xiangying;
+</script>
+</head>
+<body>
+<header>
+    <!--搜索链接跳转-->
+    <div class="nav-btn nav-return">
+        <!--返回需要跳转的页面暂时没写-->
+        <a href="../index.php">
+            <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
+            <!--<div class="return">返回</div>-->
+        </a>
+
+    </div>
+	<div id="citys" data-chooseType="hz" class="btn-group btn-group-sm float-left">
+		<a id="qz" type="button" class="btn typebtn" onclick="typebtn(this)" href="rentout_publish.html">出租</a>
+		<a id="bj" type="button" class="btn typebtn" onclick="typebtn(this)" href="more_publish.html">保洁</a>
+		<a id="es" type="button" class="btn typebtn" onclick="typebtn(this)" href="second_publish.html">二手</a>
+		<a id="hz" type="button" class="btn typebtn btn-primary" onclick="typebtn(this)">群主</a>
+		<a id="sh" type="button" class="btn typebtn" onclick="typebtn(this)" href="jubao.html">举报</a>
+	</div>
+    <div class="float-right kefu"><a href="https://m.weibo.cn/u/3211938893"><i class="fa fa-user-o " aria-hidden="true"></i></a></div>
+	<!--
+    <h2>发布出租</h2>
+    <div class="nav-btn nav-change">
+        <a href="seekhouse_publish.html">发布求租</a>
+    </div>
+    -->
+</header>
+<div class="body qunzhu-bgcolor">
+    <div class="select-type">
+        <form name="form" id="form" action="../php/AddRentoutPublish.php" method="post" onsubmit="return Check_AddRentoutPublish();">
+            <fieldset>
+                <label for=""><input name="rent-type" type="radio" checked>租房群</label>
+                <label for=""><input name="rent-type" type="radio" >其他群</label>
+            </fieldset>
+			
+            <fieldset class="form-middle">
+				<!--<label class="big" for="about">基本信息</label>-->
+                <div class="line-box">
+                    <label for="district">区域<a style="color:red;">*</a></label>
+                    <select name="district" id="district">
+                        <!--<option selected>不限</option>-->
+                        <option selected="">全国</option>
+                        <option>北京</option>
+                        <!--添加候选项-->
+                    </select>
+                    <!--<p class="info">所在区县</p>-->
+                </div>
+
+				<!--<label class="big" for="about">联系方式</label>-->
+				<div class="line-box">
+					<label for="district">群主<a style="color:red;">*</a></label>
+					<select name="w_or_m" class="associate" id="w_or_m" >
+						<option selected>微信号</option>
+						<option>手机号</option>
+						<!--添加候选项-->
+					</select>
+					<!--<p class="info associate">推荐微信</p>-->
+					<input type="text" class="associate" name="contact" id="contact" maxlength="20">
+				</div>
+				
+				<div class="line-box">
+				<label class="big" for="about">群简介<a style="color:red;">*</a></label>
+				还可以输入<span id="counter">140</span>字<br/><!--字数统计结束&nbsp;&nbsp;--> 
+	   								<textarea style="overflow-y:hidden;overflow-x:hidden" class="wenben" cols="30" rows="10" name="about" id="about" maxlength="140" onkeydown='countChar();' onkeyup='countChar();'></textarea>
+				</div>	
+            </fieldset>
+            
+            <fieldset class="form-bottom">
+                <input class="qunzhu" type="submit" value="发布">
+            </fieldset>
+        </form>
+    </div>
+</div>
+</body>
+</html>
