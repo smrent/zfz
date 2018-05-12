@@ -347,8 +347,72 @@ textarea {
     margin: 12px 15px;
 }
 /*-------------------------------*/
+.more-bgcolor{
+    background-color: rgba(92, 196, 126, 0.4);
+}
+.tab-color-more{
+    color: #fff;
+    background-color: #5cc47e;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
+}
+.more{
+    border: 1px solid #5cc47e;
+    border-radius: 4px 4px;
+    background-color: #5cc47e;
+    width: 80%;
+    height: 3em;
+}
+/*-------------------------------*/
+.jubao-bgcolor {
+   background-color:rgba(253, 194, 25, 0.4);
+}
+.tab-color-jubao{
+    color: #fff;
+    background-color: #fdc219;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
+}
+.jubao{
+    border: 1px solid #fdc219;
+    border-radius: 4px 4px;
+    background-color: #fdc219;
+    width: 80%;
+    height: 3em;
+}
+/*-------------------------------*/
+.qunzhu-bgcolor{
+    background-color: rgba(92, 196, 126, 0.4);
+}
+.tab-color-qunzhu{
+    color: #fff;
+    background-color: #5cc47e;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
+}
+.qunzhu{
+    border: 1px solid #5cc47e;
+    border-radius: 4px 4px;
+    background-color: #5cc47e;
+    width: 80%;
+    height: 3em;
+}
+/*-------------------------------*/
+.second-bgcolor {
+   background-color:rgba(253, 194, 25, 0.4);
+}
+.tab-color-second-house{
+    color: #fff;
+    background-color: #fdc219;
+    border: 0.3em solid rgba(255, 255, 255, 0.36);
+}
+.second-house{
+    border: 1px solid #fdc219;
+    border-radius: 4px 4px;
+    background-color: #fdc219;
+    width: 80%;
+    height: 3em;
+}
+/*-------------------------------*/
 .move-bgcolor {
-    background-color: rgba(253, 194, 25, 0.4);
+   background-color:rgba(51, 131, 250, 0.4);
 }
 .tab-color-move-house{
     color: #fff;
@@ -356,9 +420,9 @@ textarea {
     border: 0.3em solid rgba(244, 240, 249, 0.36);
 }
 .move-house{
-    border: 1px solid #fdc219;
+    border: 1px solid #3383fa;
     border-radius: 4px 4px;
-    background-color: #fdc219;
+    background-color: #3383fa;
     width: 80%;
     height: 3em;
 }
@@ -380,33 +444,33 @@ textarea {
 }
 /*-------------------------------*/
 .repaire-bgcolor{
-    background-color: rgba(92, 196, 126, 0.4);
+    background-color: rgba(240, 128, 128, 0.4);
 }
 .tab-color-repaire-house{
     color: #fff;
-    background-color: #5cc47e;
+    background-color: #ee6a50;
     border: 0.3em solid rgba(255, 255, 255, 0.36);
 }
 .repaire-house{
-    border: 1px solid #5cc47e;
+    border: 1px solid #ee6a50;
     border-radius: 4px 4px;
-    background-color: #5cc47e;
+    background-color: #ee6a50;
     width: 80%;
     height: 3em;
 }
 /*-------------------------------*/
 .seek-bgcolor{
-    background-color: rgba(247, 74, 55,0.4);
+    background-color: rgba(240, 128, 128, 0.4);
 }
 .tab-color-seek-house{
     color: #fff;
-    background-color: #f74a37;
+    background-color: #ee6a50;
     border: 0.3em solid rgba(255, 255, 255, 0.36);
 }
 .seek-house{
-    border: 1px solid #f74a37;
+    border: 1px solid #ee6a50;
     border-radius: 4px 4px;
-    background-color: #f74a37;
+    background-color: #ee6a50;
     width: 80%;
     height: 3em;
 }
