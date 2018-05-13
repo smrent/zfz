@@ -1,8 +1,10 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>水木租房子-出租搜索</title>
+    <title>水木租房子-求租搜索</title>
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/search.main.css" rel="stylesheet">
     <script type="text/javascript" src="../../js/jquery.min.js"></script>
@@ -19,45 +21,45 @@
     	}
     </script>
 </head>
-<body style="">
+<body>
 <header>
     <!--搜索链接跳转-->
     <div class="nav-btn nav-return">
         <!--返回需要跳转的页面暂时没写-->
-        <a href="../../index.php">
+        <a href="../houseSeek.html">
             <i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
             <!--<div class="return">返回</div>-->
         </a>
 
     </div>
-    <h2>出租搜索</h2>
+    <h2>求租搜索</h2>
     <div class="nav-btn nav-change">
-        <a href="seekhouse_search.html">求租搜索</a>
+        <a href="rentout_search.html" >出租搜索</a>
     </div>
 
 </header>
-<div class="body rent_bgcolor">
+<div class="body seek_bgcolor">
     <div class="select-type">
-        <form class="search-box" id="form1" name="form1" action="../rentout_search.php" method="get" onsubmit="return Check_SearhKeyword();"><!---->
+        <form class="search-box" id="form1" name="form1" action="../seekhouse_search.php" method="get" onsubmit="return Check_SearhKeyword();">
             <fieldset>
                 <h4 class="center-title">关键字</h4>
                 <input class="search-bar" type="text" name="keyword" id="keyword" placeholder="编号/微信/手机/关键字">
-                <input class="btn small-btn rentout" maxlength="20" type="submit" value="搜索">
+                <input class="btn small-btn seekhouse"  maxlength="20" type="submit" value="搜索">
             </fieldset>
         </form>
-        <form action="../rentout_search.php" method="get">
-            <fieldset class="form-middle">
+        <form action="../seekhouse_search.php" method="get">
+                <fieldset class="form-middle">
                 <div class="line-box">
                     <h4 class="center-title">按条件</h4>
-                    <label for=""><input name="rent_type" type="radio" checked="" value="不限">不限</label>
-                    <label for=""><input name="rent_type" type="radio" value="整租">整租</label>
-                    <label for=""><input name="rent_type" type="radio" value="转租">转租</label>
-                    <label for=""><input name="rent_type" type="radio" value="合租">合租</label>
+                    <label for=""><input name="rent_type" type="radio" checked value="不限">不限</label>
+                    <label for=""><input name="rent_type" type="radio" value="求整租">求整租</label>
+                    <label for=""><input name="rent_type" type="radio" value="求合租">求合租</label>
                 </div>
+
                 <div class="line-box">
                     <label for="district">区域</label>
-                    <select name="district" id="district">
-                        <option selected="">不限</option>
+                    <select name="district" id="district" >
+                        <option selected>不限</option>
                         <option>东城</option>
                         <option>西城</option>
                         <option>朝阳</option>
@@ -82,8 +84,8 @@
                 </div>
                 <div class="line-box">
                     <label for="district">地铁</label>
-                    <select name="subway" id="subway">
-                        <option selected="">不限</option>
+                    <select name="subway" id="subway" >
+                        <option selected>不限</option>
                         <option>1号线</option>
                         <option>2号线</option>
                         <option>4号线</option>
@@ -107,8 +109,8 @@
                 </div>
                 <div class="line-box">
                     <label for="district">房型</label>
-                    <select name="room_type" id="room_type">
-                        <option selected="">不限</option>
+                    <select name="room_type" id="room_type" >
+                        <option selected>不限</option>
                         <option>床位</option>
                         <option>单间</option>
                         <option>一室</option>
@@ -121,38 +123,12 @@
                     <p class="info">几居室</p>
                 </div>
 
-                <div class="line-box">
-                    <label for="district">租金</label>
-                    <select name="price" id="price">
-                        <option selected="">不限</option>
-                        <option>100以下</option>
-                        <option>100~500</option>
-                        <option>500~1k</option>
-                        <option>1~1.5k</option>
-                        <option>1.5~2k</option>
-                        <option>2~2.5k</option>&gt;
-                        <option>2.5~3k</option>
-                        <option>3~3.5k</option>
-                        <option>3.5~4k</option>
-                        <option>4~4.5k</option>
-                        <option>4.5~5k</option>
-                        <option>5~5.5k</option>
-                        <option>5.5~6k</option>
-                        <option>6~6.5k</option>
-                        <option>6.5~7k</option>
-                        <option>7~7.5k</option>
-                        <option>7.5~8k</option>
-                        <option>8k以上</option>
-                    </select>
-                    <p class="info">月租金</p>
-                </div>
             </fieldset>
             <fieldset class="form-bottom">
-
-                    <input class="rentout" type="submit" value="搜索">
+                    <input class="seekhouse" type="submit" value="搜索">
             </fieldset>
         </form>
     </div>
 </div>
-
-</body></html>
+</body>
+</html>
