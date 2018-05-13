@@ -169,73 +169,6 @@
                 <label for=""><input name="rent-type" type="radio" checked>当面交易</label>
                 <label for=""><input name="rent-type" type="radio" >托管交易</label>
             </fieldset>
-
-			<fieldset class="form-middle">
-			<!--<label class="big" for="about">更多信息</label>-->
-			<div class="line-box">
-				<label for="district">地铁</label>
-				<select name="subway" id="subway">
-				    <option>请选择</option>
-					<option>暂无</option><!--selected=""-->
-					<option>1号线</option>
-					<option>2号线</option>
-					<option>4号线</option>
-					<option>5号线</option>
-					<option>6号线</option>
-					<option>8号线</option>
-					<option>9号线</option>
-					<option>10号线</option>
-					<option>13号线</option>
-					<option>14号线</option>
-					<option>15号线</option>
-					<option>16号线</option>
-					<option>亦庄线</option>
-					<option>昌平线</option>
-					<option>大兴线</option>
-					<option>房山线</option>
-					<option>八通线</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">附近地铁</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">楼层</label>
-				<select name="floor_type" id="floor_type">
-					<option>请选择</option>
-					<option>地下室</option>
-					<option>1楼</option>
-					<option>2楼</option>
-					<option>3楼</option>
-					<option>4楼</option>
-					<option>5楼</option>
-					<option>6楼</option>
-					<option>6楼以上</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">所在楼层</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">朝向</label>
-				<select name="orientation_type" id="orientation_type">
-				    <option>请选择</option>
-					<option>南北</option>
-					<option>东西</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">房子朝向</p>-->
-			</div>
-			<div class="line-box">
-				<label for="district">电梯</label>
-				<select name="elevator_type" id="elevator_type">
-				    <option>请选择</option>
-					<option>无电梯</option>
-					<option>有电梯</option>
-					<!--添加候选项-->
-				</select>
-				<!--<p class="info">有无电梯</p>-->
-			</div>
-			
-            </fieldset>
 			
             <fieldset class="form-middle">
 				<!--<label class="big" for="about">基本信息</label>-->
@@ -266,40 +199,43 @@
                     <!--<p class="info">所在区县</p>-->
                 </div>
                 <div class="line-box">
-                    <label for="district">房型<a style="color:red;">*</a></label>
-                    <select name="room_type" id="room_type">
-                        <option>床位</option>
-                        <option>单间</option>
-                        <option>一室</option>
-                        <option>二室</option>
-                        <option>三室</option>
-                        <option>四室</option>
-                        <option>五室及以上</option>
-                        <!--添加候选项-->
-                    </select>
-                    <!--<p class="info">几居室</p>-->
-                </div>
+					<label for="district">物品<a style="color:red;">*</a></label>
+					<select name="o_or_n" class="associate" id="o_or_n" >
+						<option selected>全新</option>
+						<option>9成新</option>
+						<option>8成新</option>
+						<option>7成新</option>
+						<option>6成新</option>
+						<option>5成新</option>
+						<option>5成新以下</option>
+						<!--添加候选项-->
+					</select>
+					<!--<p class="info associate">推荐微信</p>-->
+					<input type="text" class="associate" name="product" id="product" maxlength="20">
+				</div>
                 <div class="line-box">
-                    <label for="district">租金<a style="color:red;">*</a></label>
+                    <label for="district">价格<a style="color:red;">*</a></label>
                     <select name="price" id="price">
                         <option>100以下</option>
-                        <option>100~500</option>
-                        <option>500~1k</option>
-                        <option>1~1.5k</option>
-                        <option>1.5~2k</option>
-                        <option>2~2.5k</option>&gt;
-                        <option>2.5~3k</option>
-                        <option>3~3.5k</option>
-                        <option>3.5~4k</option>
-                        <option>4~4.5k</option>
-                        <option>4.5~5k</option>
-                        <option>5~5.5k</option>
-                        <option>5.5~6k</option>
-                        <option>6~6.5k</option>
-                        <option>6.5~7k</option>
-                        <option>7~7.5k</option>
-                        <option>7.5~8k</option>
-                        <option>8k以上</option>
+                        <option>100~150</option>
+						<option>150~200</option>
+						<option>200~250</option>
+						<option>250~300</option>
+						<option>300~350</option>
+						<option>350~400</option>
+						<option>400~450</option>
+						<option>450~500</option>
+						<option>500~550</option>
+						<option>550~600</option>
+						<option>600~650</option>
+						<option>650~700</option>
+						<option>700~750</option>
+						<option>750~800</option>
+						<option>800~850</option>
+                        <option>850~900</option>
+						<option>900~950</option>
+						<option>950~1k</option>
+                        <option>1k以上</option>
                         <!--添加候选项-->
                     </select>
                     <!--<p class="info big"><input type="checkbox" checked>全网最低</p>-->
@@ -319,7 +255,7 @@
 				</div>
 				
 				<div class="line-box">
-				<label class="big" for="about">出租详情<a style="color:red;">*</a></label>
+				<label class="big" for="about">转让详情<a style="color:red;">*</a></label>
 				还可以输入<span id="counter">140</span>字<br/><!--字数统计结束&nbsp;&nbsp;--> 
 	   								<textarea style="overflow-y:hidden;overflow-x:hidden" class="wenben" cols="30" rows="10" name="about" id="about" maxlength="140" onkeydown='countChar();' onkeyup='countChar();'></textarea>
 				</div>	
