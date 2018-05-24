@@ -169,18 +169,18 @@ form label {
     height: 3em;
 }
 
-.btn.small-btn {
-    width: 15%;
-    height: 2.5em;
-}
+/*.btn.small-btn {*/
+    /*width: 15%;*/
+    /*height: 2.5em;*/
+/*}*/
 
-.small-seekhouse {
-    border: 1px solid #e57633;
-    border-radius: 4px 4px;
-    background-color: #fb962a;
-    width: 15%;
-    height: 2.5em;
-}
+/*.small-seekhouse {*/
+    /*border: 1px solid #e57633;*/
+    /*border-radius: 4px 4px;*/
+    /*background-color: #fb962a;*/
+    /*width: 15%;*/
+    /*height: 2.5em;*/
+/*}*/
 
 input.associate {
     display: block;
@@ -548,4 +548,24 @@ textarea {
 .nav-changeSearch>a{
     color: rgba(236, 45, 45, 0.66);
 }
+
+
+.small-rentout{
+    border: 1px solid #9494c6;
+    border-radius: 4px 4px;
+    background-color: #5ba5f9;
+    width: 15%;
+    height: 2.0em;
+    padding: 0;
+}
+
+.small-seekhouse{
+    padding: 0;
+    border: 1px solid #e57633;
+    border-radius: 4px 4px;
+    background-color: #fb962a;
+    width: 15%;
+    height: 2em;
+}
+
 /*-----------------------------------*/
